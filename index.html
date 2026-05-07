@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ドラム基礎練アプリ</title>
+<style>
+:root{
+  --bg:#0f1115;
+  --card:#1a1d24;
+  --card2:#232733;
+  --text:#f3f4f6;
+  --muted:#a8b0c2;
+  --accent:#57d68d;
+  --danger:#ff6b6b;
+  --warn:#ffd166;
+  --line:#343a49;
+  --input:#11141b;
+}
+body.light{
+  --bg:#f5f6f8;
+  --card:#ffffff;
+  --card2:#eef1f5;
+  --text:#151922;
+  --muted:#5d6472;
+  --accent:#178f4f;
+  --danger:#d63a3a;
+  --warn:#ad7b00;
+  --line:#d8dde8;
+  --input:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  padding:14px;
+}
+h1,h2,h3{margin:0 0 10px}
+h1{font-size:26px}
+h2{font-size:19px}
+h3{font-size:16px;color:var(--muted)}
+small{color:var(--muted)}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.16);
+}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+@media(max-width:520px){
+  .grid,.grid3{grid-template-columns:1fr}
+}
+button,select,input,textarea{
+  font-size:16px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  padding:10px;
+  background:var(--input);
+  color:var(--text);
+}
+button{
+  cursor:pointer;
+  background:var(--card2);
+  font-weight:700;
+}
+button.primary{background:var(--accent);color:#061109;border:none}
+button.danger{background:var(--danger);color:white;border:none}
+button.warn{background:var(--warn);color:#1b1300;border:none}
+button.ghost{background:transparent}
+button:active{transform:translateY(1px)}
+input[type="number"]{width:96px;text-align:center}
+textarea{width:100%;min-height:82px;resize:vertical}
+.big{
+  font-size:34px;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+.center{text-align:center}
+.levelBox{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:8px;
+}
+.levelItem{
+  background:var(--card2);
+  border-radius:14px;
+  padding:10px;
+  text-align:center;
+}
+.levelNum{font-size:28px;font-weight:900;color:var(--accent)}
+.expWrap{
+  height:18px;
+  background:var(--card2);
+  border:1px solid var(--line);
+  border-radius:999px;
+  overflow:hidden;
+}
+.expBar{
+  height:100%;
+  width:0%;
+  background:var(--accent);
+  transition:.25s;
+}
+.badge{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:999px;
+  background:var(--card2);
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
+}
+.scoreBox{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space:pre-wrap;
+  background:var(--card2);
+  border-radius:14px;
+  padding:12px;
+  font-size:20px;
+  line-height:1.5;
+}
+table{width:100%;border-collapse:collapse}
+td,th{border:1px solid var(--line);padding:8px;text-align:center}
+tr.checked{background:rgba(87,214,141,.18)}
+tr.weak{background:rgba(255,107,107,.16)}
+.hidden{display:none !important}
+.checkGroup{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.checkItem{
+  background:var(--card2);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:10px;
+}
+.checkItem input{transform:scale(1.25);margin-right:8px}
+.modalBack{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+  padding:14px;
+}
+.modal{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  width:min(680px,100%);
+  max-height:90vh;
+  overflow:auto;
+}
+.logItem{
+  background:var(--card2);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:10px;
+  margin-bottom:8px;
+}
+.kbd{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background:var(--card2);
+  padding:2px 6px;
+  border-radius:6px;
+}
+.modePill{
+  border:2px solid transparent;
+}
+.modePill.active{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+.footerSpace{height:20px}
+</style>
+</head>
+<body>
+
+<h1>🥁 ドラム基礎練アプリ</h1>
+<div class="row" style="margin-bottom:12px">
+  <span class="badge" id="currentModeBadge">初心者</span>
+  <span class="badge" id="streakBadge">連続 0日</span>
+  <span class="badge" id="todayMinutesBadge">今日 0分</span>
+</div>
+
+<div class="card">
+  <h2>レベル</h2>
+  <div class="levelBox">
+    <div class="levelItem">
+      <small>ドラムLv</small>
+      <div class="levelNum" id="drumLevel">0</div>
+    </div>
+    <div class="levelItem">
+      <small>レッスンLv</small>
+      <div class="levelNum" id="lessonLevel">0</div>
+    </div>
+    <div class="levelItem">
+      <small>自主練Lv</small>
+      <div class="levelNum" id="practiceLevel">0</div>
+    </div>
+  </div>
+  <div style="margin-top:12px">
+    <div class="row" style="justify-content:space-between">
+      <small>自主練EXP</small>
+      <small id="expText">0 / 60分</small>
+    </div>
+    <div class="expWrap"><div class="expBar" id="expBar"></div></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>モード</h2>
+  <div class="grid3">
+    <button class="modePill" id="modeBeginner" onclick="setMode('初心者')">初心者</button>
+    <button class="modePill" id="modeIntermediate" onclick="setMode('経験者')">経験者</button>
+    <button class="modePill" id="modeAdvanced" onclick="setMode('熟練')">熟練</button>
+  </div>
+  <small>初心者は画面をかなり絞る。経験者は便利機能、熟練は全部表示。</small>
+</div>
+
+<div class="card">
+  <h2>メトロノーム</h2>
+  <div class="center">
+    <div class="big" id="beat">-</div>
+    <small id="subBeat">停止中</small>
+  </div>
+
+  <div class="row" style="justify-content:center;margin-top:10px">
+    <button onclick="changeBpm(-5)">−5</button>
+    <input id="bpm" type="number" value="80" min="20" max="320" onchange="saveSettings()">
+    <button onclick="changeBpm(5)">＋5</button>
+  </div>
+
+  <div class="grid">
+    <button class="primary" onclick="startPractice()">スタート</button>
+    <button class="danger" onclick="stopPractice(true)">ストップ</button>
+  </div>
+
+  <div class="grid">
+    <label>音色<br>
+      <select id="tone" onchange="saveSettings()">
+        <option value="click">クリック</option>
+        <option value="wood">ウッド</option>
+        <option value="kick">キック風</option>
+        <option value="hat">ハイハット風</option>
+      </select>
+    </label>
+    <label>練習時間<br>
+      <select id="timerMode" onchange="saveSettings()">
+        <option value="60">1分</option>
+        <option value="180">3分</option>
+        <option value="300">5分</option>
+        <option value="600">10分</option>
+        <option value="0">無限</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="intermediateOnly">
+    <div class="grid">
+      <button onclick="tapTempo()">タップテンポ</button>
+      <button onclick="resetTapTempo()">タップリセット</button>
+    </div>
+    <small id="tapInfo">タップでBPM計測</small>
+  </div>
+</div>
+
+<div class="card advancedOnly">
+  <h2>拍・分割</h2>
+  <div class="grid">
+    <label>小節数<br>
+      <select id="bars" onchange="saveSettings()">
+        <option value="1">1小節</option>
+        <option value="2">2小節</option>
+      </select>
+    </label>
+    <label>拍子<br>
+      <select id="beatsPerBar" onchange="saveSettings()">
+        <option value="2">2拍子</option>
+        <option value="3">3拍子</option>
+        <option value="4" selected>4拍子</option>
+        <option value="5">5拍子</option>
+        <option value="7">7拍子</option>
+      </select>
+    </label>
+  </div>
+  <div class="grid">
+    <label>分割<br>
+      <select id="division" onchange="saveSettings()">
+        <option value="1">1分割</option>
+        <option value="2">2分割</option>
+        <option value="3">3連</option>
+        <option value="4">4分割</option>
+        <option value="5">5連</option>
+        <option value="6">6連</option>
+        <option value="7">7連</option>
+        <option value="9">9連</option>
+      </select>
+    </label>
+    <label>swing<br>
+      <select id="swing" onchange="saveSettings()">
+        <option value="0">なし</option>
+        <option value="0.58">軽め</option>
+        <option value="0.66">強め</option>
+      </select>
+    </label>
+  </div>
+</div>
+
+<div class="card">
+  <h2>基礎フレーズ</h2>
+  <select id="phrase" onchange="renderScore(); renderChecklist(); saveSettings();" style="width:100%">
+    <option>シングルストローク RLRL</option>
+    <option>ダブルストローク RRLL</option>
+    <option>パラディドル RLRR LRLL</option>
+    <option>8ビート</option>
+    <option>16ビート</option>
+    <option>チェンジアップ 4分→8分→16分</option>
+    <option>アクセント移動</option>
+    <option>足だけ練習</option>
+    <option>曲練習・全体練習</option>
+  </select>
+
+  <div class="intermediateOnly row" style="margin-top:8px">
+    <label><input type="checkbox" id="lrReverse" onchange="renderScore();saveSettings()"> LR逆転</label>
+    <label><input type="checkbox" id="footMode" onchange="renderScore();saveSettings()"> 足練モード</label>
+  </div>
+
+  <div class="intermediateOnly grid" style="margin-top:8px">
+    <button onclick="randomTask()">ランダム課題</button>
+    <button onclick="markCurrentBpmDone()">今のBPM完了</button>
+  </div>
+</div>
+
+<div class="card">
+  <h2>譜面 / 手順</h2>
+  <div class="scoreBox" id="score"></div>
+</div>
+
+<div class="card">
+  <h2>今日のチェックリスト</h2>
+  <table id="checklist"></table>
+</div>
+
+<div class="card intermediateOnly">
+  <h2>録音</h2>
+  <div class="grid">
+    <button onclick="startRecording()">録音開始</button>
+    <button onclick="stopRecording()">録音停止</button>
+  </div>
+  <div class="grid">
+    <button onclick="shareRecording()">録音を共有</button>
+    <button onclick="clearRecording()">録音クリア</button>
+  </div>
+  <small id="recordingStatus">未録音</small>
+  <audio id="recordingPlayer" controls style="width:100%;margin-top:8px;display:none"></audio>
+</div>
+
+<div class="card">
+  <h2>記録</h2>
+  <div class="grid">
+    <button onclick="openMemoModal()">練習後メモ</button>
+    <button onclick="shareTodayLog()">今日の記録を共有</button>
+  </div>
+  <div class="grid intermediateOnly">
+    <button onclick="showLogs()">過去ログ</button>
+    <button onclick="showWeakness()">苦手BPM/項目</button>
+  </div>
+</div>
+
+<div class="card advancedOnly">
+  <h2>バックアップ</h2>
+  <div class="grid">
+    <button onclick="exportBackup()">バックアップ出力</button>
+    <button onclick="document.getElementById('importFile').click()">バックアップ読込</button>
+  </div>
+  <input id="importFile" type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)">
+  <small>スマホ変更時はバックアップJSONを保存して、新端末で読み込む。</small>
+</div>
+
+<div class="card">
+  <h2>先生メニュー</h2>
+  <div class="grid">
+    <button class="warn" onclick="openTeacherLogin()">先生設定を開く</button>
+    <button onclick="toggleTheme()">ダーク/ライト</button>
+  </div>
+  <small>パスワードは初期値 <span class="kbd">1234</span>。先生設定で変更可能。</small>
+</div>
+
+<div class="footerSpace"></div>
+
+<!-- 練習後メモ -->
+<div class="modalBack" id="memoModal">
+  <div class="modal">
+    <h2>練習後メモ</h2>
+    <div class="grid">
+      <label>今日の出来<br>
+        <select id="resultSelect">
+          <option>完璧</option>
+          <option selected>できた</option>
+          <option>もうちょっと</option>
+          <option>ぜんぜんできない</option>
+        </select>
+      </label>
+      <label>練習種別<br>
+        <select id="practiceType">
+          <option>個人練習</option>
+          <option>レッスン</option>
+          <option>曲練習</option>
+          <option>全体練習</option>
+        </select>
+      </label>
+    </div>
+
+    <h3>チェック 複数OK</h3>
+    <div class="checkGroup" id="memoChecks"></div>
+
+    <h3>なんの練習？ / 自由メモ</h3>
+    <textarea id="freeMemo" placeholder="例：曲練習 Lemon サビ前、右足が遅れる、アクセント弱い"></textarea>
+
+    <div class="grid" style="margin-top:10px">
+      <button class="primary" onclick="saveMemo()">保存</button>
+      <button onclick="closeModal('memoModal')">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<!-- 過去ログ -->
+<div class="modalBack" id="logsModal">
+  <div class="modal">
+    <h2>過去ログ</h2>
+    <div id="logsContent"></div>
+    <button onclick="closeModal('logsModal')">閉じる</button>
+  </div>
+</div>
+
+<!-- 苦手 -->
+<div class="modalBack" id="weakModal">
+  <div class="modal">
+    <h2>苦手BPM / 苦手項目</h2>
+    <div id="weakContent"></div>
+    <button onclick="closeModal('weakModal')">閉じる</button>
+  </div>
+</div>
+
+<!-- 先生ログイン -->
+<div class="modalBack" id="teacherLoginModal">
+  <div class="modal">
+    <h2>先生設定ログイン</h2>
+    <input id="teacherPassInput" type="password" placeholder="パスワード" style="width:100%">
+    <div class="grid" style="margin-top:10px">
+      <button class="primary" onclick="checkTeacherPassword()">開く</button>
+      <button onclick="closeModal('teacherLoginModal')">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<!-- 先生設定 -->
+<div class="modalBack" id="teacherModal">
+  <div class="modal">
+    <h2>先生設定</h2>
+    <small>HTMLだけなので本格セキュリティではなく、子どもが勝手に触らないためのロック。</small>
+
+    <h3>レベル調整</h3>
+    <div class="grid">
+      <label>レッスン回数 / Lv<br>
+        <input id="teacherLessonCount" type="number" min="0">
+      </label>
+      <label>自主練合計分<br>
+        <input id="teacherPracticeMinutes" type="number" min="0">
+      </label>
+    </div>
+    <div class="grid">
+      <button class="primary" onclick="teacherSaveLevels()">レベル保存</button>
+      <button class="warn" onclick="addLesson()">レッスン1回追加</button>
+    </div>
+
+    <h3>表示モード</h3>
+    <div class="grid3">
+      <button onclick="teacherSetMode('初心者')">初心者</button>
+      <button onclick="teacherSetMode('経験者')">経験者</button>
+      <button onclick="teacherSetMode('熟練')">熟練</button>
+    </div>
+
+    <h3>項目をさらに絞る</h3>
+    <div class="checkGroup">
+      <label class="checkItem"><input type="checkbox" id="allowRecording">録音を表示</label>
+      <label class="checkItem"><input type="checkbox" id="allowAdvancedRhythm">拍子/奇数割りを表示</label>
+      <label class="checkItem"><input type="checkbox" id="allowBackup">バックアップを表示</label>
+      <label class="checkItem"><input type="checkbox" id="allowHistory">過去ログ/苦手分析を表示</label>
+    </div>
+    <button class="primary" onclick="teacherSaveFeatureFlags()">表示設定を保存</button>
+
+    <h3>パスワード変更</h3>
+    <input id="newTeacherPassword" type="text" placeholder="新しいパスワード" style="width:100%">
+    <button onclick="changeTeacherPassword()">パスワード変更</button>
+
+    <h3>危険ゾーン</h3>
+    <div class="grid">
+      <button class="danger" onclick="resetLogs()">履歴削除</button>
+      <button class="danger" onclick="resetAllData()">全データ削除</button>
+    </div>
+
+    <div class="grid" style="margin-top:10px">
+      <button onclick="closeModal('teacherModal')">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const APP_KEY = "drumPracticeApp_v3";
+
+const defaultData = {
+  settings:{
+    mode:"初心者",
+    theme:"dark",
+    bpm:80,
+    tone:"click",
+    timerMode:60,
+    bars:1,
+    beatsPerBar:4,
+    division:1,
+    swing:0,
+    phrase:"シングルストローク RLRL",
+    lrReverse:false,
+    footMode:false,
+    teacherPassword:"1234",
+    features:{
+      recording:true,
+      advancedRhythm:true,
+      backup:true,
+      history:true
+    }
+  },
+  stats:{
+    lessonCount:0,
+    practiceMinutes:0,
+    streak:0,
+    lastPracticeDate:"",
+    todayMinutes:0,
+    todayDate:""
+  },
+  checklist:{},
+  logs:[]
+};
+
+let appData = loadAppData();
+
+let audioCtx;
+let timerId = null;
+let countdownId = null;
+let practiceStartedAt = null;
+let remainingSeconds = 0;
+let beatIndex = 0;
+let subIndex = 0;
+let tapTimes = [];
+
+let mediaRecorder = null;
+let recordedChunks = [];
+let recordedBlob = null;
+
+const baseSpeeds = [60,70,80,90,100,110,120,140,160];
+
+const phrases = {
+  "シングルストローク RLRL": "R L R L | R L R L\n1 e & a | 2 e & a",
+  "ダブルストローク RRLL": "R R L L | R R L L\n1 e & a | 2 e & a",
+  "パラディドル RLRR LRLL": "R L R R | L R L L\n1 e & a | 2 e & a",
+  "8ビート": "HH: 8分\nSD: 2・4\nBD: 1・3",
+  "16ビート": "HH: 16分\nSD: 2・4\nBD: 1・3",
+  "チェンジアップ 4分→8分→16分": "4分 → 8分 → 16分 → 8分 → 4分",
+  "アクセント移動": "> R L R L | R > L R L\nR L > R L | R L R > L",
+  "足だけ練習": "BD: 1 2 3 4\nHH foot: 2・4",
+  "曲練習・全体練習": "曲名・練習内容をメモに書く"
+};
+
+const memoItems = ["右手","左手","右足","左足","フレーズ","リズムキープ","アクセント"];
+
+function loadAppData(){
+  try{
+    const raw = localStorage.getItem(APP_KEY);
+    if(!raw) return structuredClone(defaultData);
+    const saved = JSON.parse(raw);
+    return mergeDeep(structuredClone(defaultData), saved);
+  }catch(e){
+    return structuredClone(defaultData);
+  }
+}
+
+function mergeDeep(target, source){
+  for(const key in source){
+    if(source[key] && typeof source[key] === "object" && !Array.isArray(source[key])){
+      target[key] = mergeDeep(target[key] || {}, source[key]);
+    }else{
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+
+function saveAppData(){
+  localStorage.setItem(APP_KEY, JSON.stringify(appData));
+}
+
+function todayStr(){
+  return new Date().toLocaleDateString("ja-JP");
+}
+
+function syncToday(){
+  const t = todayStr();
+  if(appData.stats.todayDate !== t){
+    appData.stats.todayDate = t;
+    appData.stats.todayMinutes = 0;
+    saveAppData();
+  }
+}
+
+function init(){
+  syncToday();
+
+  document.getElementById("bpm").value = appData.settings.bpm;
+  document.getElementById("tone").value = appData.settings.tone;
+  document.getElementById("timerMode").value = appData.settings.timerMode;
+  document.getElementById("bars").value = appData.settings.bars;
+  document.getElementById("beatsPerBar").value = appData.settings.beatsPerBar;
+  document.getElementById("division").value = appData.settings.division;
+  document.getElementById("swing").value = appData.settings.swing;
+  document.getElementById("phrase").value = appData.settings.phrase;
+  document.getElementById("lrReverse").checked = appData.settings.lrReverse;
+  document.getElementById("footMode").checked = appData.settings.footMode;
+
+  document.body.classList.toggle("light", appData.settings.theme === "light");
+
+  renderMemoChecks();
+  applyMode();
+  renderScore();
+  renderChecklist();
+  renderLevels();
+}
+
+function saveSettings(){
+  appData.settings.bpm = Number(document.getElementById("bpm").value);
+  appData.settings.tone = document.getElementById("tone").value;
+  appData.settings.timerMode = Number(document.getElementById("timerMode").value);
+  appData.settings.bars = Number(document.getElementById("bars").value);
+  appData.settings.beatsPerBar = Number(document.getElementById("beatsPerBar").value);
+  appData.settings.division = Number(document.getElementById("division").value);
+  appData.settings.swing = Number(document.getElementById("swing").value);
+  appData.settings.phrase = document.getElementById("phrase").value;
+  appData.settings.lrReverse = document.getElementById("lrReverse").checked;
+  appData.settings.footMode = document.getElementById("footMode").checked;
+  saveAppData();
+}
+
+function setMode(mode){
+  appData.settings.mode = mode;
+  saveAppData();
+  applyMode();
+}
+
+function applyMode(){
+  const mode = appData.settings.mode;
+  document.getElementById("currentModeBadge").textContent = mode;
+
+  document.getElementById("modeBeginner").classList.toggle("active", mode === "初心者");
+  document.getElementById("modeIntermediate").classList.toggle("active", mode === "経験者");
+  document.getElementById("modeAdvanced").classList.toggle("active", mode === "熟練");
+
+  const showIntermediate = mode !== "初心者";
+  const showAdvanced = mode === "熟練";
+
+  document.querySelectorAll(".intermediateOnly").forEach(el=>{
+    el.classList.toggle("hidden", !showIntermediate);
+  });
+  document.querySelectorAll(".advancedOnly").forEach(el=>{
+    el.classList.toggle("hidden", !showAdvanced);
+  });
+
+  const f = appData.settings.features;
+  document.querySelectorAll(".advancedOnly").forEach(el=>{
+    if(el.textContent.includes("拍・分割") && !f.advancedRhythm) el.classList.add("hidden");
+    if(el.textContent.includes("バックアップ") && !f.backup) el.classList.add("hidden");
+  });
+
+  const recCard = [...document.querySelectorAll(".card")].find(el=>el.textContent.includes("録音"));
+  if(recCard) recCard.classList.toggle("hidden", !(showIntermediate && f.recording));
+
+  const historyButtons = [...document.querySelectorAll(".intermediateOnly")].filter(el=>el.textContent.includes("過去ログ") || el.textContent.includes("苦手BPM"));
+  historyButtons.forEach(el=>el.classList.toggle("hidden", !(showIntermediate && f.history)));
+
+  saveSettings();
+}
+
+function renderLevels(){
+  syncToday();
+  const lessonLevel = appData.stats.lessonCount;
+  const practiceLevel = Math.floor(appData.stats.practiceMinutes / 60);
+  const exp = appData.stats.practiceMinutes % 60;
+  const drumLevel = lessonLevel + practiceLevel;
+
+  document.getElementById("lessonLevel").textContent = lessonLevel;
+  document.getElementById("practiceLevel").textContent = practiceLevel;
+  document.getElementById("drumLevel").textContent = drumLevel;
+  document.getElementById("expText").textContent = `${exp} / 60分`;
+  document.getElementById("expBar").style.width = `${Math.round(exp / 60 * 100)}%`;
+  document.getElementById("todayMinutesBadge").textContent = `今日 ${appData.stats.todayMinutes}分`;
+  document.getElementById("streakBadge").textContent = `連続 ${appData.stats.streak}日`;
+}
+
+function getChecklistKey(){
+  return `${todayStr()}__${document.getElementById("phrase").value}`;
+}
+
+function renderChecklist(){
+  const key = getChecklistKey();
+  if(!appData.checklist[key]) appData.checklist[key] = {};
+  const data = appData.checklist[key];
+  const table = document.getElementById("checklist");
+  let html = "<tr><th>BPM</th><th>完了</th><th>苦手</th></tr>";
+  baseSpeeds.forEach(bpm=>{
+    const done = data[bpm]?.done;
+    const weak = data[bpm]?.weak;
+    html += `<tr class="${done ? 'checked' : ''} ${weak ? 'weak' : ''}">
+      <td>${bpm}</td>
+      <td><input type="checkbox" ${done ? "checked" : ""} onchange="toggleBpm(${bpm}, 'done', this.checked)"></td>
+      <td><input type="checkbox" ${weak ? "checked" : ""} onchange="toggleBpm(${bpm}, 'weak', this.checked)"></td>
+    </tr>`;
+  });
+  table.innerHTML = html;
+  saveAppData();
+}
+
+function toggleBpm(bpm, type, val){
+  const key = getChecklistKey();
+  if(!appData.checklist[key]) appData.checklist[key] = {};
+  if(!appData.checklist[key][bpm]) appData.checklist[key][bpm] = {done:false, weak:false};
+  appData.checklist[key][bpm][type] = val;
+  saveAppData();
+  renderChecklist();
+}
+
+function markCurrentBpmDone(){
+  const bpm = Number(document.getElementById("bpm").value);
+  const nearest = baseSpeeds.reduce((a,b)=>Math.abs(b-bpm)<Math.abs(a-bpm)?b:a, baseSpeeds[0]);
+  toggleBpm(nearest, "done", true);
+}
+
+function renderScore(){
+  let phrase = document.getElementById("phrase").value;
+  let score = phrases[phrase] || "";
+  if(document.getElementById("footMode").checked){
+    score = "足練モード\nBD / HH foot中心\n" + score;
+  }
+  if(document.getElementById("lrReverse").checked){
+    score = reverseLR(score);
+  }
+  document.getElementById("score").textContent = score;
+}
+
+function reverseLR(text){
+  return text
+    .replaceAll("R","_R_")
+    .replaceAll("L","R")
+    .replaceAll("_R_","L")
+    .replaceAll("右","TEMP_RIGHT")
+    .replaceAll("左","右")
+    .replaceAll("TEMP_RIGHT","左");
+}
+
+function changeBpm(n){
+  const el = document.getElementById("bpm");
+  el.value = Math.max(20, Math.min(320, Number(el.value)+n));
+  saveSettings();
+}
+
+function ensureAudio(){
+  if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}
+
+function playSound(accent=false, sub=false){
+  ensureAudio();
+  const tone = document.getElementById("tone").value;
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+
+  let freq = 900;
+  if(tone === "click") freq = accent ? 1300 : sub ? 650 : 900;
+  if(tone === "wood") freq = accent ? 760 : sub ? 420 : 560;
+  if(tone === "kick") freq = accent ? 130 : sub ? 70 : 95;
+  if(tone === "hat") freq = accent ? 5200 : sub ? 3000 : 4200;
+
+  osc.frequency.value = freq;
+  osc.type = tone === "hat" ? "square" : "sine";
+  gain.gain.setValueAtTime(sub ? 0.18 : 0.42, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.07);
+
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.08);
+}
+
+function startPractice(){
+  stopPractice(false);
+  saveSettings();
+  ensureAudio();
+
+  practiceStartedAt = Date.now();
+  remainingSeconds = Number(document.getElementById("timerMode").value);
+  beatIndex = 0;
+  subIndex = 0;
+
+  runMetro();
+
+  if(remainingSeconds > 0){
+    countdownId = setInterval(()=>{
+      remainingSeconds--;
+      document.getElementById("subBeat").textContent = `残り ${formatTime(remainingSeconds)}`;
+      if(remainingSeconds <= 0){
+        stopPractice(true);
+        openMemoModal();
+      }
+    },1000);
+  }
+}
+
+function runMetro(){
+  const bpm = Number(document.getElementById("bpm").value);
+  const mode = appData.settings.mode;
+  const division = mode === "熟練" ? Number(document.getElementById("division").value) : 1;
+  const beatsPerBar = mode === "熟練" ? Number(document.getElementById("beatsPerBar").value) : 4;
+  const bars = mode === "熟練" ? Number(document.getElementById("bars").value) : 1;
+  const swing = mode === "熟練" ? Number(document.getElementById("swing").value) : 0;
+
+  const totalBeats = beatsPerBar * bars;
+  const currentBeat = (beatIndex % totalBeats) + 1;
+  const currentBar = Math.floor((beatIndex % totalBeats) / beatsPerBar) + 1;
+  const isAccent = currentBeat === 1 || ((currentBeat-1) % beatsPerBar === 0);
+  const isSub = subIndex !== 0;
+
+  document.getElementById("beat").textContent = `${currentBeat}`;
+  document.getElementById("subBeat").textContent = `小節${currentBar} / 分割 ${subIndex+1}/${division}`;
+
+  playSound(isAccent && !isSub, isSub);
+
+  let interval = 60000 / bpm / division;
+
+  if(swing > 0 && division === 2){
+    const beatMs = 60000 / bpm;
+    interval = subIndex === 0 ? beatMs * swing : beatMs * (1 - swing);
+  }
+
+  subIndex++;
+  if(subIndex >= division){
+    subIndex = 0;
+    beatIndex++;
+  }
+
+  timerId = setTimeout(runMetro, interval);
+}
+
+function stopPractice(shouldRecord){
+  clearTimeout(timerId);
+  clearInterval(countdownId);
+  timerId = null;
+  countdownId = null;
+  document.getElementById("beat").textContent = "-";
+  document.getElementById("subBeat").textContent = "停止中";
+
+  if(shouldRecord && practiceStartedAt){
+    const minutes = Math.max(1, Math.round((Date.now() - practiceStartedAt) / 60000));
+    addPracticeMinutes(minutes);
+    practiceStartedAt = null;
+  }
+}
+
+function addPracticeMinutes(min){
+  syncToday();
+  appData.stats.practiceMinutes += min;
+  appData.stats.todayMinutes += min;
+  updateStreak();
+  saveAppData();
+  renderLevels();
+}
+
+function updateStreak(){
+  const t = todayStr();
+  if(appData.stats.lastPracticeDate === t) return;
+
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const y = yesterday.toLocaleDateString("ja-JP");
+
+  if(appData.stats.lastPracticeDate === y){
+    appData.stats.streak += 1;
+  }else{
+    appData.stats.streak = 1;
+  }
+  appData.stats.lastPracticeDate = t;
+}
+
+function formatTime(sec){
+  const m = Math.floor(sec/60);
+  const s = sec%60;
+  return `${m}:${String(s).padStart(2,"0")}`;
+}
+
+function tapTempo(){
+  const now = Date.now();
+  tapTimes.push(now);
+  tapTimes = tapTimes.slice(-6);
+  if(tapTimes.length >= 2){
+    const intervals = [];
+    for(let i=1;i<tapTimes.length;i++) intervals.push(tapTimes[i]-tapTimes[i-1]);
+    const avg = intervals.reduce((a,b)=>a+b,0)/intervals.length;
+    const bpm = Math.round(60000/avg);
+    document.getElementById("bpm").value = Math.max(20, Math.min(320, bpm));
+    document.getElementById("tapInfo").textContent = `推定BPM ${bpm}`;
+    saveSettings();
+  }
+}
+
+function resetTapTempo(){
+  tapTimes = [];
+  document.getElementById("tapInfo").textContent = "タップでBPM計測";
+}
+
+function randomTask(){
+  const phraseList = Object.keys(phrases);
+  const phrase = phraseList[Math.floor(Math.random()*phraseList.length)];
+  const bpm = baseSpeeds[Math.floor(Math.random()*baseSpeeds.length)];
+  document.getElementById("phrase").value = phrase;
+  document.getElementById("bpm").value = bpm;
+  renderScore();
+  renderChecklist();
+  saveSettings();
+  alert(`ランダム課題\n${phrase}\nBPM ${bpm}`);
+}
+
+function openMemoModal(){
+  document.getElementById("memoModal").style.display = "flex";
+}
+
+function closeModal(id){
+  document.getElementById(id).style.display = "none";
+}
+
+function renderMemoChecks(){
+  const wrap = document.getElementById("memoChecks");
+  wrap.innerHTML = memoItems.map(item=>`
+    <label class="checkItem"><input type="checkbox" value="${item}">${item}</label>
+  `).join("");
+}
+
+function saveMemo(){
+  const checks = [...document.querySelectorAll("#memoChecks input:checked")].map(x=>x.value);
+  const seconds = Number(document.getElementById("timerMode").value);
+  const minutes = seconds === 0 ? 0 : Math.round(seconds/60);
+  const log = {
+    date:new Date().toLocaleString("ja-JP"),
+    type:document.getElementById("practiceType").value,
+    phrase:document.getElementById("phrase").value,
+    bpm:Number(document.getElementById("bpm").value),
+    minutes:minutes,
+    result:document.getElementById("resultSelect").value,
+    checks,
+    memo:document.getElementById("freeMemo").value.trim()
+  };
+
+  appData.logs.unshift(log);
+
+  if(log.type === "レッスン"){
+    appData.stats.lessonCount += 1;
+  }
+
+  saveAppData();
+  renderLevels();
+  closeModal("memoModal");
+  document.getElementById("freeMemo").value = "";
+  document.querySelectorAll("#memoChecks input").forEach(x=>x.checked=false);
+  alert("記録したで！");
+}
+
+function addLesson(){
+  appData.stats.lessonCount += 1;
+  saveAppData();
+  renderLevels();
+  syncTeacherFields();
+  alert("レッスンを1回追加したで");
+}
+
+function shareTodayLog(){
+  const t = todayStr();
+  const todayLogs = appData.logs.filter(l=>l.date.includes(t.replaceAll("/","/")));
+  let text = `🥁 今日のドラム練習\n日付：${t}\n今日の練習時間：${appData.stats.todayMinutes}分\nドラムLv：${document.getElementById("drumLevel").textContent}\nレッスンLv：${document.getElementById("lessonLevel").textContent}\n自主練Lv：${document.getElementById("practiceLevel").textContent}\n\n`;
+
+  if(todayLogs.length){
+    todayLogs.forEach((l,i)=>{
+      text += `#${i+1}\n${l.type} / ${l.phrase}\nBPM ${l.bpm} / ${l.minutes || "-"}分\n出来：${l.result}\nチェック：${l.checks.join(", ") || "なし"}\nメモ：${l.memo || "なし"}\n\n`;
+    });
+  }else{
+    text += "メモ記録：なし\n";
+  }
+
+  shareText(text, "ドラム練習記録");
+}
+
+function shareText(text, title){
+  if(navigator.share){
+    navigator.share({title, text}).catch(()=>{});
+  }else if(navigator.clipboard){
+    navigator.clipboard.writeText(text);
+    alert("共有非対応なのでコピーしたで");
+  }else{
+    alert(text);
+  }
+}
+
+function showLogs(){
+  const wrap = document.getElementById("logsContent");
+  if(!appData.logs.length){
+    wrap.innerHTML = "<p>まだログがないで。</p>";
+  }else{
+    wrap.innerHTML = appData.logs.slice(0,50).map(l=>`
+      <div class="logItem">
+        <b>${l.date}</b><br>
+        ${l.type} / ${l.phrase} / BPM ${l.bpm} / ${l.minutes || "-"}分<br>
+        出来：${l.result}<br>
+        チェック：${(l.checks||[]).join(", ") || "なし"}<br>
+        メモ：${escapeHtml(l.memo || "なし")}
+      </div>
+    `).join("");
+  }
+  document.getElementById("logsModal").style.display = "flex";
+}
+
+function showWeakness(){
+  const bpmCount = {};
+  const itemCount = {};
+  appData.logs.forEach(l=>{
+    if(l.result === "もうちょっと" || l.result === "ぜんぜんできない"){
+      bpmCount[l.bpm] = (bpmCount[l.bpm]||0)+1;
+      (l.checks||[]).forEach(c=>itemCount[c]=(itemCount[c]||0)+1);
+    }
+  });
+
+  const bpmHtml = Object.entries(bpmCount).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<li>BPM ${k}: ${v}回</li>`).join("") || "<li>まだデータなし</li>";
+  const itemHtml = Object.entries(itemCount).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<li>${k}: ${v}回</li>`).join("") || "<li>まだデータなし</li>";
+
+  document.getElementById("weakContent").innerHTML = `
+    <h3>苦手BPM</h3><ul>${bpmHtml}</ul>
+    <h3>苦手項目</h3><ul>${itemHtml}</ul>
+  `;
+  document.getElementById("weakModal").style.display = "flex";
+}
+
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g, s=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[s]));
+}
+
+async function startRecording(){
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({audio:true});
+    recordedChunks = [];
+    mediaRecorder = new MediaRecorder(stream);
+    mediaRecorder.ondataavailable = e=>{
+      if(e.data.size>0) recordedChunks.push(e.data);
+    };
+    mediaRecorder.onstop = ()=>{
+      recordedBlob = new Blob(recordedChunks, {type:"audio/webm"});
+      const url = URL.createObjectURL(recordedBlob);
+      const audio = document.getElementById("recordingPlayer");
+      audio.src = url;
+      audio.style.display = "block";
+      document.getElementById("recordingStatus").textContent = "録音あり";
+      stream.getTracks().forEach(t=>t.stop());
+    };
+    mediaRecorder.start();
+    document.getElementById("recordingStatus").textContent = "録音中...";
+  }catch(e){
+    alert("録音できへんかった。GitHub Pagesなどhttpsで開くと安定するで。");
+  }
+}
+
+function stopRecording(){
+  if(mediaRecorder && mediaRecorder.state !== "inactive"){
+    mediaRecorder.stop();
+  }
+}
+
+async function shareRecording(){
+  if(!recordedBlob){
+    alert("録音がまだないで");
+    return;
+  }
+  const file = new File([recordedBlob], `drum_recording_${Date.now()}.webm`, {type:"audio/webm"});
+  if(navigator.canShare && navigator.canShare({files:[file]})){
+    await navigator.share({files:[file], title:"ドラム録音"});
+  }else{
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(recordedBlob);
+    a.download = file.name;
+    a.click();
+  }
+}
+
+function clearRecording(){
+  recordedBlob = null;
+  recordedChunks = [];
+  document.getElementById("recordingPlayer").style.display = "none";
+  document.getElementById("recordingStatus").textContent = "未録音";
+}
+
+function exportBackup(){
+  const blob = new Blob([JSON.stringify(appData, null, 2)], {type:"application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `drum_backup_${Date.now()}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importBackup(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    try{
+      const imported = JSON.parse(reader.result);
+      appData = mergeDeep(structuredClone(defaultData), imported);
+      saveAppData();
+      init();
+      alert("バックアップを読み込んだで");
+    }catch(e){
+      alert("読み込み失敗。JSONファイルを確認してな。");
+    }
+  };
+  reader.readAsText(file);
+}
+
+function toggleTheme(){
+  appData.settings.theme = appData.settings.theme === "light" ? "dark" : "light";
+  saveAppData();
+  document.body.classList.toggle("light", appData.settings.theme === "light");
+}
+
+function openTeacherLogin(){
+  document.getElementById("teacherPassInput").value = "";
+  document.getElementById("teacherLoginModal").style.display = "flex";
+}
+
+function checkTeacherPassword(){
+  const input = document.getElementById("teacherPassInput").value;
+  if(input === appData.settings.teacherPassword){
+    closeModal("teacherLoginModal");
+    syncTeacherFields();
+    document.getElementById("teacherModal").style.display = "flex";
+  }else{
+    alert("パスワードが違うで");
+  }
+}
+
+function syncTeacherFields(){
+  document.getElementById("teacherLessonCount").value = appData.stats.lessonCount;
+  document.getElementById("teacherPracticeMinutes").value = appData.stats.practiceMinutes;
+  document.getElementById("allowRecording").checked = appData.settings.features.recording;
+  document.getElementById("allowAdvancedRhythm").checked = appData.settings.features.advancedRhythm;
+  document.getElementById("allowBackup").checked = appData.settings.features.backup;
+  document.getElementById("allowHistory").checked = appData.settings.features.history;
+}
+
+function teacherSaveLevels(){
+  appData.stats.lessonCount = Math.max(0, Number(document.getElementById("teacherLessonCount").value));
+  appData.stats.practiceMinutes = Math.max(0, Number(document.getElementById("teacherPracticeMinutes").value));
+  saveAppData();
+  renderLevels();
+  alert("レベルを調整したで");
+}
+
+function teacherSetMode(mode){
+  setMode(mode);
+  alert(`${mode}モードにしたで`);
+}
+
+function teacherSaveFeatureFlags(){
+  appData.settings.features.recording = document.getElementById("allowRecording").checked;
+  appData.settings.features.advancedRhythm = document.getElementById("allowAdvancedRhythm").checked;
+  appData.settings.features.backup = document.getElementById("allowBackup").checked;
+  appData.settings.features.history = document.getElementById("allowHistory").checked;
+  saveAppData();
+  applyMode();
+  alert("表示項目を保存したで");
+}
+
+function changeTeacherPassword(){
+  const pw = document.getElementById("newTeacherPassword").value.trim();
+  if(!pw){
+    alert("新しいパスワードを入れてな");
+    return;
+  }
+  appData.settings.teacherPassword = pw;
+  document.getElementById("newTeacherPassword").value = "";
+  saveAppData();
+  alert("パスワードを変更したで");
+}
+
+function resetLogs(){
+  if(!confirm("履歴だけ削除する？")) return;
+  appData.logs = [];
+  appData.checklist = {};
+  saveAppData();
+  renderChecklist();
+  alert("履歴を削除したで");
+}
+
+function resetAllData(){
+  if(!confirm("全データ削除する？ほんまに？")) return;
+  localStorage.removeItem(APP_KEY);
+  appData = structuredClone(defaultData);
+  init();
+  alert("全データを削除したで");
+}
+
+window.addEventListener("beforeunload", saveSettings);
+init();
+</script>
+</body>
+</html>
