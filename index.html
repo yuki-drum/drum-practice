@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ドラム基礎練アプリ v4.1.2</title>
+<title>ドラム基礎練アプリ v4.5.3</title>
 <style>
 :root{--bg:#0f1115;--card:#1a1d24;--card2:#232733;--text:#f3f4f6;--muted:#a8b0c2;--accent:#57d68d;--danger:#ff6b6b;--warn:#ffd166;--line:#343a49;--input:#11141b;--highlight:#57d68d}
 body.light{--bg:#f5f6f8;--card:#fff;--card2:#eef1f5;--text:#151922;--muted:#5d6472;--accent:#178f4f;--danger:#d63a3a;--warn:#ad7b00;--line:#d8dde8;--input:#fff;--highlight:#178f4f}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);padding:14px}h1,h2,h3{margin:0 0 10px}h1{font-size:26px}h2{font-size:19px}h3{font-size:16px;color:var(--muted)}small{color:var(--muted)}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px;box-shadow:0 6px 18px rgba(0,0,0,.16)}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}@media(max-width:520px){.grid,.grid3{grid-template-columns:1fr}}
-button,select,input,textarea{font-size:16px;border-radius:12px;border:1px solid var(--line);padding:10px;background:var(--input);color:var(--text)}button{cursor:pointer;background:var(--card2);font-weight:700}button.primary{background:var(--accent);color:#061109;border:none}button.danger{background:var(--danger);color:white;border:none}button.warn{background:var(--warn);color:#1b1300;border:none}button:active{transform:translateY(1px)}input[type=number]{width:96px;text-align:center}input[type=range]{width:100%}textarea{width:100%;min-height:82px;resize:vertical}.big{font-size:34px;font-weight:900;letter-spacing:.04em}.center{text-align:center}.levelBox{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.levelItem{background:var(--card2);border-radius:14px;padding:10px;text-align:center}.levelNum{font-size:28px;font-weight:900;color:var(--accent)}.expWrap{height:18px;background:var(--card2);border:1px solid var(--line);border-radius:999px;overflow:hidden}.expBar{height:100%;width:0%;background:var(--accent);transition:.25s}.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);font-size:13px}.scoreBox{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;background:var(--card2);border-radius:14px;padding:12px;font-size:20px;line-height:1.55;overflow-x:auto}.scoreLine{display:flex;gap:7px;white-space:nowrap;line-height:1.6;align-items:center}.scoreCell{min-width:25px;text-align:center;border-radius:6px;padding:0 2px}.scoreCell.active{background:var(--highlight);color:#061109;font-weight:900}.scoreLabel{min-width:78px;color:var(--muted)}.accentLine .scoreCell{color:var(--warn);font-weight:900}.simpleScoreLine{display:flex;white-space:nowrap;line-height:1.6;align-items:center}.simpleLabel{width:42px;color:var(--muted);flex:0 0 42px}.simpleBar{display:flex;align-items:center}.simpleCell{min-width:18px;text-align:center;border-radius:4px}.simpleCell.active{background:var(--highlight);color:#061109;font-weight:900}table{width:100%;border-collapse:collapse}td,th{border:1px solid var(--line);padding:8px;text-align:center}tr.checked{background:rgba(87,214,141,.18)}tr.weak{background:rgba(255,107,107,.16)}.hidden{display:none!important}.checkGroup{display:grid;grid-template-columns:1fr 1fr;gap:8px}.checkItem{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:10px}.checkItem input{transform:scale(1.25);margin-right:8px}.modalBack{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:10;padding:14px}.modal{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;width:min(780px,100%);max-height:90vh;overflow:auto}.logItem{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:8px}.kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--card2);padding:2px 6px;border-radius:6px}.modePill{border:2px solid transparent}.modePill.active{border-color:var(--accent);color:var(--accent)}details{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:10px}summary{cursor:pointer;font-weight:900}.legendTable td{text-align:left}.logSelectRow{display:grid;grid-template-columns:42px 1fr;gap:8px;align-items:start}.monthLogCheck{transform:scale(1.25);margin-top:12px}.footerSpace{height:20px}
+button,select,input,textarea{font-size:16px;border-radius:12px;border:1px solid var(--line);padding:10px;background:var(--input);color:var(--text)}button{cursor:pointer;background:var(--card2);font-weight:700}button.primary{background:var(--accent);color:#061109;border:none}button.danger{background:var(--danger);color:white;border:none}button.warn{background:var(--warn);color:#1b1300;border:none}button:active{transform:translateY(1px)}input[type=number]{width:96px;text-align:center}input[type=range]{width:100%}textarea{width:100%;min-height:82px;resize:vertical}.big{font-size:34px;font-weight:900;letter-spacing:.04em}.center{text-align:center}.levelBox{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.levelItem{background:var(--card2);border-radius:14px;padding:10px;text-align:center}.levelNum{font-size:28px;font-weight:900;color:var(--accent)}.expWrap{height:18px;background:var(--card2);border:1px solid var(--line);border-radius:999px;overflow:hidden}.expBar{height:100%;width:0%;background:var(--accent);transition:.25s}.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);font-size:13px}.scoreBox{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;background:var(--card2);border-radius:14px;padding:12px;font-size:20px;line-height:1.55;overflow-x:auto}.scoreLine{display:flex;gap:7px;white-space:nowrap;line-height:1.6;align-items:center}.scoreCell{min-width:25px;text-align:center;border-radius:6px;padding:0 2px}.measureBar{display:inline-flex;align-items:center;justify-content:center;min-width:10px;color:var(--muted);font-weight:900}.scoreCell.active{background:var(--highlight);color:#061109;font-weight:900}.scoreLabel{min-width:78px;color:var(--muted)}.accentLine .scoreCell{color:var(--warn);font-weight:900}.simpleScoreLine{display:flex;white-space:nowrap;line-height:1.6;align-items:center}.simpleLabel{width:42px;color:var(--muted);flex:0 0 42px}.simpleBar{display:flex;align-items:center}.simpleCell{min-width:18px;text-align:center;border-radius:4px}.simpleCell.active{background:var(--highlight);color:#061109;font-weight:900}table{width:100%;border-collapse:collapse}td,th{border:1px solid var(--line);padding:8px;text-align:center}tr.checked{background:rgba(87,214,141,.18)}tr.weak{background:rgba(255,107,107,.16)}.hidden{display:none!important}.checkGroup{display:grid;grid-template-columns:1fr 1fr;gap:8px}.checkItem{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:10px}.checkItem input{transform:scale(1.25);margin-right:8px}.modalBack{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:10;padding:14px}.modal{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;width:min(780px,100%);max-height:90vh;overflow:auto}.logItem{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:8px}.kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--card2);padding:2px 6px;border-radius:6px}.modePill{border:2px solid transparent}.modePill.active{border-color:var(--accent);color:var(--accent)}details{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:10px}summary{cursor:pointer;font-weight:900}.legendTable td{text-align:left}.logSelectRow{display:grid;grid-template-columns:42px 1fr;gap:8px;align-items:start}.monthLogCheck{transform:scale(1.25);margin-top:12px}.footerSpace{height:20px}
 </style></head><body>
-<h1>🥁 ドラム基礎練アプリ v4.1.2</h1><div class="row" style="margin-bottom:12px"><span class="badge" id="currentModeBadge">初心者</span><span class="badge" id="streakBadge">連続 0日</span><span class="badge" id="todayMinutesBadge">今日 0分</span></div>
+<h1>🥁 ドラム基礎練アプリ v4.5.3</h1><div class="row" style="margin-bottom:12px"><span class="badge" id="currentModeBadge">初心者</span><span class="badge" id="streakBadge">連続 0日</span><span class="badge" id="todayMinutesBadge">今日 0分</span></div>
 <div class="card"><h2>レベル</h2><div class="levelBox"><div class="levelItem"><small>ドラムLv</small><div class="levelNum" id="drumLevel">0</div></div><div class="levelItem"><small>レッスンLv</small><div class="levelNum" id="lessonLevel">0</div></div><div class="levelItem"><small>自主練Lv</small><div class="levelNum" id="practiceLevel">0</div></div></div><div style="margin-top:12px"><div class="row" style="justify-content:space-between"><small>自主練EXP</small><small id="expText">0 / 60分</small></div><div class="expWrap"><div class="expBar" id="expBar"></div></div></div></div>
 <div class="card"><h2>モード</h2><div class="grid3"><button class="modePill" id="modeBeginner" onclick="setMode('初心者')">初心者</button><button class="modePill" id="modeIntermediate" onclick="setMode('経験者')">経験者</button><button class="modePill" id="modeAdvanced" onclick="setMode('熟練')">熟練</button></div><small>録音・記録・バックアップ・LR逆転・足練習・ランダム課題は全モードで表示。</small></div>
 <div class="card"><h2>メトロノーム</h2><div class="center"><div class="big" id="beat">-</div><small id="subBeat">停止中</small></div><div class="row" style="justify-content:center;margin-top:10px"><button onclick="changeBpm(-5)">−5</button><input id="bpm" type="number" value="80" min="20" max="320" onchange="saveSettings()"><button onclick="changeBpm(5)">＋5</button></div><div class="grid"><button class="primary" onclick="startPractice()">スタート</button><button class="danger" onclick="stopPractice(true)">ストップ</button></div><div class="grid"><label>音色<br><select id="tone" onchange="saveSettings()"><option value="click">クリック</option><option value="wood">ウッド</option><option value="kick">キック風</option><option value="hat">ハイハット風</option></select></label><label>練習時間<br><select id="timerMode" onchange="saveSettings()"><option value="60">1分</option><option value="180">3分</option><option value="300">5分</option><option value="600">10分</option><option value="0">無限</option></select></label></div><div class="grid"><label>クリック音<br><select id="clickEnabled" onchange="saveSettings()"><option value="on">ON</option><option value="off">OFF</option></select></label><label>音量：<span id="volumeText">70%</span><br><input id="volume" type="range" min="0" max="100" value="70" oninput="updateVolumeText();saveSettings()"></label></div><div class="grid"><button onclick="tapTempo()">タップテンポ</button><button onclick="resetTapTempo()">タップリセット</button></div><small id="tapInfo">タップでBPM計測</small></div>
-<div class="card advancedOnly"><h2>拍・分割</h2><div class="grid"><label>小節数<br><select id="bars" onchange="saveSettings()"><option value="1">1小節</option><option value="2">2小節</option></select></label><label>拍子<br><select id="beatsPerBar" onchange="saveSettings()"><option value="2">2拍子</option><option value="3">3拍子</option><option value="4" selected>4拍子</option><option value="5">5拍子</option><option value="7">7拍子</option></select></label></div><div class="grid"><label>分割<br><select id="division" onchange="saveSettings()"><option value="1">1分割</option><option value="2">2分割</option><option value="3">3連</option><option value="4">4分割</option><option value="5">5連</option><option value="6">6連</option><option value="7">7連</option><option value="9">9連</option></select></label><label>swing<br><select id="swing" onchange="saveSettings()"><option value="0">なし</option><option value="0.58">軽め</option><option value="0.66">強め</option></select></label></div></div>
-<div class="card"><h2>練習課題</h2><select id="phrase" onchange="onPhraseChanged()" style="width:100%"><option>シングルストローク RLRL</option><option>ダブルストローク RRLL</option><option>パラディドル RLRR LRLL</option><option>8ビート</option><option>16ビート</option><option>チェンジアップ 4分→8分→16分</option><option>アクセント移動</option><option>足だけ練習</option><option>簡単フィル：8ビート→フィル</option><option>曲練習・全体練習</option></select><div class="grid" style="margin-top:8px"><label><input type="checkbox" id="lrReverse" onchange="renderScore();saveSettings()"> LR逆転</label><label><input type="checkbox" id="footMode" onchange="renderScore();saveSettings()"> 足練習</label></div><div class="grid" style="margin-top:8px"><label>譜面表示<br><select id="scoreView" onchange="renderScore();saveSettings()"><option value="lr">LR表示</option><option value="simple">簡易譜面</option></select></label><button onclick="randomTask()">ランダム課題</button></div><button style="width:100%;margin-top:8px" onclick="markCurrentBpmDone()">今のBPM完了</button></div>
+<div class="card advancedOnly"><h2>拍・分割</h2><div class="grid"><label>小節数<br><select id="bars" onchange="saveSettings();updateControlAvailability();renderScore()"><option value="2">2小節</option><option value="3">3小節</option><option value="4">4小節</option></select></label><label>拍子<br><select id="beatsPerBar" onchange="saveSettings()"><option value="2">2拍子</option><option value="3">3拍子</option><option value="4" selected>4拍子</option><option value="5">5拍子</option><option value="7">7拍子</option></select></label></div><div class="grid"><label>分割<br><select id="division" onchange="saveSettings()"><option value="1">1分割</option><option value="2">2分割</option><option value="3">3連</option><option value="4">4分割</option><option value="5">5連</option><option value="6">6連</option><option value="7">7連</option><option value="9">9連</option></select></label><label>swing<br><select id="swing" onchange="saveSettings()"><option value="0">なし</option><option value="0.58">軽め</option><option value="0.66">強め</option></select></label></div></div>
+<div class="card"><h2>練習課題</h2><select id="phrase" onchange="onPhraseChanged()" style="width:100%"><option>シングルストローク RLRL</option><option>ダブルストローク RRLL</option><option>パラディドル RLRR LRLL</option><option>8ビート</option><option>16ビート</option><option>チェンジアップ 4分→8分→16分</option><option>アクセント移動</option><option>アクセント移動 16分</option><option>足だけ練習</option><option>簡単フィル：8ビート→フィル</option><option>曲練習・全体練習</option></select><div class="grid" style="margin-top:8px"><label><input type="checkbox" id="lrReverse" onchange="renderScore();saveSettings()"> LR逆転</label><label><input type="checkbox" id="footMode" onchange="renderScore();saveSettings()"> 足練習</label></div><div class="grid" style="margin-top:8px"><label>譜面表示<br><select id="scoreView" onchange="renderScore();saveSettings()"><option value="lr">LR表示</option><option value="simple">簡易譜面</option></select></label><button onclick="randomTask()">ランダム課題</button></div><div class="grid" style="margin-top:8px"><label>音符設定<br><select id="noteValue" onchange="updateControlAvailability();renderScore();saveSettings()"><option value="4">4分</option><option value="8">8分</option><option value="16" selected>16分</option></select></label><label>譜面ハイライト<br><select id="highlightEnabled" onchange="renderScore();saveSettings()"><option value="on">ON</option><option value="off">OFF</option></select></label></div><div class="grid" style="margin-top:8px"><label>アクセント表示<br><select id="accentEnabled" onchange="updateControlAvailability();renderScore();saveSettings()"><option value="off">OFF</option><option value="on">ON</option></select></label><label>アクセント位置<br><select id="accentPattern" onchange="renderScore();saveSettings()"><option value="none">なし</option><option value="first">1つ目</option><option value="second">2つ目</option><option value="third">3つ目</option><option value="fourth">4つ目</option><option value="move">移動</option></select></label></div><button style="width:100%;margin-top:8px" onclick="markCurrentBpmDone()">今のBPM完了</button></div>
 <div class="card"><h2>譜面 / 手順</h2><div class="scoreBox" id="score"></div><details style="margin-top:10px"><summary>記号の見方</summary><table class="legendTable" style="margin-top:8px"><tr><td>x</td><td>ハイハット / シンバル</td></tr><tr><td>o</td><td>太鼓を叩く</td></tr><tr><td>-</td><td>休み</td></tr><tr><td>BD</td><td>バスドラ</td></tr><tr><td>SD</td><td>スネア</td></tr><tr><td>HT</td><td>ハイタム</td></tr><tr><td>LT</td><td>ロータム</td></tr><tr><td>FT</td><td>フロアタム</td></tr></table></details></div>
 <div class="card"><h2>今日のチェックリスト</h2><table id="checklist"></table></div>
 <div class="card"><h2>録音</h2><div class="grid"><button onclick="startRecording()">録音開始</button><button onclick="stopRecording()">録音停止</button></div><div class="grid"><button onclick="shareRecording()">録音を共有</button><button onclick="clearRecording()">録音クリア</button></div><small id="recordingStatus">未録音</small><audio id="recordingPlayer" controls style="width:100%;margin-top:8px;display:none"></audio></div>
@@ -29,16 +29,988 @@ button,select,input,textarea{font-size:16px;border-radius:12px;border:1px solid 
 <div class="modalBack" id="teacherLoginModal"><div class="modal"><h2>先生設定ログイン</h2><input id="teacherPassInput" type="password" placeholder="パスワード" style="width:100%"><div class="grid" style="margin-top:10px"><button class="primary" onclick="checkTeacherPassword()">開く</button><button onclick="closeModal('teacherLoginModal')">閉じる</button></div></div></div>
 <div class="modalBack" id="teacherModal"><div class="modal"><h2>先生設定</h2><small>HTMLだけなので本格セキュリティではなく、子どもが勝手に触らないためのロック。</small><h3>レベル調整</h3><div class="grid"><label>レッスン回数 / Lv<br><input id="teacherLessonCount" type="number" min="0"></label><label>自主練合計分<br><input id="teacherPracticeMinutes" type="number" min="0"></label></div><div class="grid"><button class="primary" onclick="teacherSaveLevels()">レベル保存</button><button class="warn" onclick="addLesson()">レッスン1回追加</button></div><h3>表示モード</h3><div class="grid3"><button onclick="teacherSetMode('初心者')">初心者</button><button onclick="teacherSetMode('経験者')">経験者</button><button onclick="teacherSetMode('熟練')">熟練</button></div><h3>パスワード変更</h3><input id="newTeacherPassword" type="text" placeholder="新しいパスワード" style="width:100%"><button onclick="changeTeacherPassword()">パスワード変更</button><h3>危険ゾーン</h3><div class="grid"><button class="danger" onclick="resetLogs()">履歴削除</button><button class="danger" onclick="resetAllData()">全データ削除</button></div><div class="grid" style="margin-top:10px"><button onclick="closeModal('teacherModal')">閉じる</button></div></div></div>
 <script>
-const APP_KEY="drumPracticeApp_v412";const defaultData={settings:{mode:"初心者",theme:"dark",bpm:80,tone:"click",timerMode:60,bars:1,beatsPerBar:4,division:1,swing:0,phrase:"シングルストローク RLRL",scoreView:"lr",lrReverse:false,footMode:false,teacherPassword:"1234",clickEnabled:"on",volume:70},stats:{lessonCount:0,practiceMinutes:0,streak:0,lastPracticeDate:"",todayMinutes:0,todayDate:""},checklist:{},logs:[]};let appData=loadAppData();let audioCtx,timerId=null,countdownId=null,practiceStartedAt=null,remainingSeconds=0,beatIndex=0,subIndex=0,currentStepIndex=-1,tapTimes=[];let mediaRecorder=null,recordedChunks=[],recordedBlob=null;const baseSpeeds=[60,70,80,90,100,110,120,140,160];
-const phraseData={"シングルストローク RLRL":{lr:["R","L","R","L","R","L","R","L"],counts:["1","e","&","a","2","e","&","a"],accents:["","","","",">","","",""],simple:[{label:"手",pattern:"RLRLRLRL"}],text:"シングルストローク"},"ダブルストローク RRLL":{lr:["R","R","L","L","R","R","L","L"],counts:["1","e","&","a","2","e","&","a"],accents:["","","","",">","","",""],simple:[{label:"手",pattern:"RRLLRRLL"}],text:"ダブルストローク"},"パラディドル RLRR LRLL":{lr:["R","L","R","R","L","R","L","L"],counts:["1","e","&","a","2","e","&","a"],accents:[">","","","",">","","",""],simple:[{label:"手",pattern:"RLRRLRLL"}],text:"パラディドル"},"8ビート":{lr:["HH","BD","HH","SD","HH","BD","HH","SD"],counts:["1","&","2","&","3","&","4","&"],accents:["","","","","","","",""],simple:[{label:"HH",pattern:"x-x-x-x-"},{label:"SD",pattern:"----o---"},{label:"BD",pattern:"o-----o-"}],text:"8ビート"},"16ビート":{lr:["HH","HH","HH","HH","SD","HH","HH","HH","HH","HH","BD","HH","SD","HH","HH","HH"],counts:["1","e","&","a","2","e","&","a","3","e","&","a","4","e","&","a"],accents:Array(16).fill(""),simple:[{label:"HH",pattern:"xxxxxxxxxxxxxxxx"},{label:"SD",pattern:"----o-------o---"},{label:"BD",pattern:"o---------o-----"}],text:"16ビート"},"チェンジアップ 4分→8分→16分":{lr:["R","-","-","-","R","-","R","-","R","L","R","L","R","L","R","L"],counts:["1","","","","2","","&","","3","e","&","a","4","e","&","a"],accents:[">","","","",">","","","",">","","","",">","","",""] ,simple:[{label:"手",pattern:"R---R-R-RLRLRLRL"}],text:"4分 → 8分 → 16分"},"アクセント移動":{lr:["R","L","R","L","R","L","R","L","R","L","R","L","R","L","R","L"],counts:["1","e","&","a","2","e","&","a","3","e","&","a","4","e","&","a"],accents:[">","","","","",">","","","","",">","","","","",">"],simple:[{label:"ACC",pattern:">---->---->---->"},{label:"手",pattern:"RLRLRLRLRLRLRLRL"}],text:"アクセント移動"},"足だけ練習":{lr:["BD","-","HHf","-","BD","-","HHf","-"],counts:["1","&","2","&","3","&","4","&"],accents:Array(8).fill(""),simple:[{label:"BD",pattern:"o---o---"},{label:"HHf",pattern:"--o---o-"}],text:"足だけ練習"},"簡単フィル：8ビート→フィル":{lr:["HH","BD","HH","SD","HH","BD","HH","SD","HT","SD","SD","-","LT","-","FT","BD"],counts:["1","&","2","&","3","&","4","&","1","e","&","a","2","e","&","a"],accents:[">","","","","","","","",">","","","","","","",""] ,simple:[{title:"1小節目：8ビート"},{label:"HH",pattern:"x-x-x-x-"},{label:"SD",pattern:"----o---"},{label:"BD",pattern:"o-----o-"},{spacer:true},{title:"2小節目：フィル"},{label:"HT",pattern:"----o---"},{label:"SD",pattern:"o-o---o-"},{label:"LT",pattern:"------o-"},{label:"FT",pattern:"-------o"},{label:"BD",pattern:"o-------"}],text:"1小節目：8ビート → 2小節目：フィル"},"曲練習・全体練習":{lr:["自由","メモ","に","記入"],counts:["1","2","3","4"],accents:Array(4).fill(""),simple:[{label:"MEMO",pattern:"曲練習"}],text:"曲名・練習内容をメモに書く"}};const memoItems=["右手","左手","右足","左足","フレーズ","リズムキープ","アクセント"];
-function loadAppData(){try{const raw=localStorage.getItem(APP_KEY);if(!raw)return structuredClone(defaultData);return mergeDeep(structuredClone(defaultData),JSON.parse(raw))}catch(e){return structuredClone(defaultData)}}function mergeDeep(t,s){for(const k in s){if(s[k]&&typeof s[k]==="object"&&!Array.isArray(s[k]))t[k]=mergeDeep(t[k]||{},s[k]);else t[k]=s[k]}return t}function saveAppData(){localStorage.setItem(APP_KEY,JSON.stringify(appData))}function todayStr(){return new Date().toLocaleDateString("ja-JP")}function syncToday(){const t=todayStr();if(appData.stats.todayDate!==t){appData.stats.todayDate=t;appData.stats.todayMinutes=0;saveAppData()}}
-function init(){syncToday();for(const id of ["bpm","tone","timerMode","bars","beatsPerBar","division","swing","phrase","scoreView","clickEnabled","volume"]){document.getElementById(id).value=appData.settings[id]}document.getElementById("lrReverse").checked=appData.settings.lrReverse;document.getElementById("footMode").checked=appData.settings.footMode;updateVolumeText();document.body.classList.toggle("light",appData.settings.theme==="light");renderMemoChecks();applyMode();renderScore();renderChecklist();renderLevels()}
-function saveSettings(){for(const id of ["bpm","timerMode","bars","beatsPerBar","division","swing","volume"]){appData.settings[id]=Number(document.getElementById(id).value)}for(const id of ["tone","phrase","scoreView","clickEnabled"]){appData.settings[id]=document.getElementById(id).value}appData.settings.lrReverse=document.getElementById("lrReverse").checked;appData.settings.footMode=document.getElementById("footMode").checked;saveAppData()}function updateVolumeText(){document.getElementById("volumeText").textContent=document.getElementById("volume").value+"%"}function setMode(m){appData.settings.mode=m;saveAppData();applyMode()}function applyMode(){const m=appData.settings.mode;document.getElementById("currentModeBadge").textContent=m;document.getElementById("modeBeginner").classList.toggle("active",m==="初心者");document.getElementById("modeIntermediate").classList.toggle("active",m==="経験者");document.getElementById("modeAdvanced").classList.toggle("active",m==="熟練");document.querySelectorAll(".advancedOnly").forEach(el=>el.classList.toggle("hidden",m!=="熟練"));saveSettings()}function renderLevels(){syncToday();const lesson=appData.stats.lessonCount,pl=Math.floor(appData.stats.practiceMinutes/60),exp=appData.stats.practiceMinutes%60;document.getElementById("lessonLevel").textContent=lesson;document.getElementById("practiceLevel").textContent=pl;document.getElementById("drumLevel").textContent=lesson+pl;document.getElementById("expText").textContent=`${exp} / 60分`;document.getElementById("expBar").style.width=`${Math.round(exp/60*100)}%`;document.getElementById("todayMinutesBadge").textContent=`今日 ${appData.stats.todayMinutes}分`;document.getElementById("streakBadge").textContent=`連続 ${appData.stats.streak}日`}
-function getChecklistKey(){return `${todayStr()}__${document.getElementById("phrase").value}`}function renderChecklist(){const key=getChecklistKey();if(!appData.checklist[key])appData.checklist[key]={};const data=appData.checklist[key];let html="<tr><th>BPM</th><th>完了</th><th>苦手</th></tr>";baseSpeeds.forEach(bpm=>{const done=data[bpm]?.done,weak=data[bpm]?.weak;html+=`<tr class="${done?'checked':''} ${weak?'weak':''}"><td>${bpm}</td><td><input type="checkbox" ${done?'checked':''} onchange="toggleBpm(${bpm}, 'done', this.checked)"></td><td><input type="checkbox" ${weak?'checked':''} onchange="toggleBpm(${bpm}, 'weak', this.checked)"></td></tr>`});document.getElementById("checklist").innerHTML=html;saveAppData()}function toggleBpm(bpm,type,val){const key=getChecklistKey();if(!appData.checklist[key])appData.checklist[key]={};if(!appData.checklist[key][bpm])appData.checklist[key][bpm]={done:false,weak:false};appData.checklist[key][bpm][type]=val;saveAppData();renderChecklist()}function markCurrentBpmDone(){const bpm=Number(document.getElementById("bpm").value);const nearest=baseSpeeds.reduce((a,b)=>Math.abs(b-bpm)<Math.abs(a-bpm)?b:a,baseSpeeds[0]);toggleBpm(nearest,"done",true)}
-function onPhraseChanged(){if(document.getElementById("phrase").value==="簡単フィル：8ビート→フィル")document.getElementById("scoreView").value="simple";renderScore();renderChecklist();saveSettings()}function getCurrentPhraseData(){return phraseData[document.getElementById("phrase").value]||phraseData["シングルストローク RLRL"]}function renderScore(){const data=getCurrentPhraseData();document.getElementById("scoreView").value==="simple"?renderSimpleScore(data):renderLRScore(data)}function renderLRScore(data){let lr=[...data.lr],counts=[...data.counts],accents=[...data.accents];if(document.getElementById("lrReverse").checked)lr=lr.map(reverseLRText);if(document.getElementById("footMode").checked)lr=lr.map(x=>x==="R"||x==="L"?"BD":x);const step=currentStepIndex;document.getElementById("score").innerHTML=`<div>${escapeHtml(data.text)}</div><br><div class="scoreLine accentLine"><span class="scoreLabel">ACC</span>${accents.map((x,i)=>`<span class="scoreCell ${i===step?'active':''}">${escapeHtml(x||" ")}</span>`).join("")}</div><div class="scoreLine"><span class="scoreLabel">PLAY</span>${lr.map((x,i)=>`<span class="scoreCell ${i===step?'active':''}">${escapeHtml(x||" ")}</span>`).join("")}</div><div class="scoreLine"><span class="scoreLabel">COUNT</span>${counts.map((x,i)=>`<span class="scoreCell ${i===step?'active':''}">${escapeHtml(x||" ")}</span>`).join("")}</div>`}function renderSimpleScore(data){const step=currentStepIndex;let html="";(data.simple||[]).forEach(row=>{if(row.spacer){html+="<br>";return}if(row.title){html+=`<div style="margin-top:4px;margin-bottom:4px">${escapeHtml(row.title)}</div>`;return}html+=`<div class="simpleScoreLine"><span class="simpleLabel">${escapeHtml(row.label)}</span><span>|</span><span class="simpleBar">`;[...row.pattern].forEach((ch,i)=>{html+=`<span class="simpleCell ${isSimpleCellActive(data,row,i,step)?'active':''}">${escapeHtml(ch)}</span>`});html+="</span><span>|</span></div>"});document.getElementById("score").innerHTML=html}function isSimpleCellActive(data,row,i,step){if(step<0)return false;if(data.text.includes("フィル")){if(step<8)return["HH","SD","BD"].includes(row.label)&&i===step;return["HT","SD","LT","FT","BD"].includes(row.label)&&i===step-8}return i===step}function reverseLRText(text){return String(text).replaceAll("R","_R_").replaceAll("L","R").replaceAll("_R_","L").replaceAll("右","TEMP_RIGHT").replaceAll("左","右").replaceAll("TEMP_RIGHT","左")}
-function changeBpm(n){const el=document.getElementById("bpm");el.value=Math.max(20,Math.min(320,Number(el.value)+n));saveSettings()}function ensureAudio(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)()}function playSound(accent=false,sub=false){if(document.getElementById("clickEnabled").value==="off")return;ensureAudio();const tone=document.getElementById("tone").value,volume=Number(document.getElementById("volume").value)/100,osc=audioCtx.createOscillator(),gain=audioCtx.createGain();let freq=900;if(tone==="click")freq=accent?1300:sub?650:900;if(tone==="wood")freq=accent?760:sub?420:560;if(tone==="kick")freq=accent?130:sub?70:95;if(tone==="hat")freq=accent?5200:sub?3000:4200;osc.frequency.value=freq;osc.type=tone==="hat"?"square":"sine";gain.gain.setValueAtTime((sub?0.18:0.42)*volume,audioCtx.currentTime);gain.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.07);osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+.08)}function startPractice(){stopPractice(false);saveSettings();ensureAudio();practiceStartedAt=Date.now();scoreStartedAt=Date.now();remainingSeconds=Number(document.getElementById("timerMode").value);beatIndex=0;subIndex=0;currentStepIndex=-1;runMetro();if(remainingSeconds>0){countdownId=setInterval(()=>{remainingSeconds--;document.getElementById("subBeat").textContent=`残り ${formatTime(remainingSeconds)}`;if(remainingSeconds<=0){stopPractice(true);openMemoModal()}},1000)}}function getScoreStepCount(data){if(!data)data=getCurrentPhraseData();return Math.max(data.lr.length,data.counts.length,1)}function getScoreBeats(data){const phrase=document.getElementById("phrase").value;if(phrase==="簡単フィル：8ビート→フィル")return 8;return 4}function updateScoreHighlight(){const data=getCurrentPhraseData(),len=getScoreStepCount(data);if(!scoreStartedAt){currentStepIndex=-1;return}const bpm=Number(document.getElementById("bpm").value),elapsed=Date.now()-scoreStartedAt,beatMs=60000/bpm,cycleMs=beatMs*getScoreBeats(data),stepMs=cycleMs/len;currentStepIndex=Math.floor(elapsed/stepMs)%len}function runMetro(){const bpm=Number(document.getElementById("bpm").value),mode=appData.settings.mode,division=mode==="熟練"?Number(document.getElementById("division").value):1,beatsPerBar=mode==="熟練"?Number(document.getElementById("beatsPerBar").value):4,bars=mode==="熟練"?Number(document.getElementById("bars").value):1,swing=mode==="熟練"?Number(document.getElementById("swing").value):0,totalBeats=beatsPerBar*bars,currentBeat=beatIndex%totalBeats+1,currentBar=Math.floor(beatIndex%totalBeats/beatsPerBar)+1,isAccent=currentBeat===1||((currentBeat-1)%beatsPerBar===0),isSub=subIndex!==0;updateScoreHighlight();renderScore();document.getElementById("beat").textContent=`${currentBeat}`;document.getElementById("subBeat").textContent=`小節${currentBar} / 分割 ${subIndex+1}/${division}`;playSound(isAccent&&!isSub,isSub);let interval=60000/bpm/division;if(swing>0&&division===2){const beatMs=60000/bpm;interval=subIndex===0?beatMs*swing:beatMs*(1-swing)}subIndex++;if(subIndex>=division){subIndex=0;beatIndex++}timerId=setTimeout(runMetro,interval)}function stopPractice(shouldRecord){clearTimeout(timerId);clearInterval(countdownId);timerId=null;countdownId=null;currentStepIndex=-1;scoreStartedAt=null;document.getElementById("beat").textContent="-";document.getElementById("subBeat").textContent="停止中";renderScore();if(shouldRecord&&practiceStartedAt){addPracticeMinutes(Math.max(1,Math.round((Date.now()-practiceStartedAt)/60000)));practiceStartedAt=null}}function addPracticeMinutes(min){syncToday();appData.stats.practiceMinutes+=min;appData.stats.todayMinutes+=min;updateStreak();saveAppData();renderLevels()}function updateStreak(){const t=todayStr();if(appData.stats.lastPracticeDate===t)return;const y=new Date();y.setDate(y.getDate()-1);const ys=y.toLocaleDateString("ja-JP");appData.stats.streak=appData.stats.lastPracticeDate===ys?appData.stats.streak+1:1;appData.stats.lastPracticeDate=t}function formatTime(sec){return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,"0")}`}
-function tapTempo(){const now=Date.now();tapTimes.push(now);tapTimes=tapTimes.slice(-6);if(tapTimes.length>=2){const intervals=[];for(let i=1;i<tapTimes.length;i++)intervals.push(tapTimes[i]-tapTimes[i-1]);const avg=intervals.reduce((a,b)=>a+b,0)/intervals.length,bpm=Math.round(60000/avg);document.getElementById("bpm").value=Math.max(20,Math.min(320,bpm));document.getElementById("tapInfo").textContent=`推定BPM ${bpm}`;saveSettings()}}function resetTapTempo(){tapTimes=[];document.getElementById("tapInfo").textContent="タップでBPM計測"}function randomTask(){const list=Object.keys(phraseData),phrase=list[Math.floor(Math.random()*list.length)],bpm=baseSpeeds[Math.floor(Math.random()*baseSpeeds.length)];document.getElementById("phrase").value=phrase;document.getElementById("bpm").value=bpm;if(phrase==="簡単フィル：8ビート→フィル")document.getElementById("scoreView").value="simple";renderScore();renderChecklist();saveSettings();alert(`ランダム課題\n${phrase}\nBPM ${bpm}`)}function openMemoModal(){document.getElementById("memoModal").style.display="flex"}function closeModal(id){document.getElementById(id).style.display="none"}function renderMemoChecks(){document.getElementById("memoChecks").innerHTML=memoItems.map(item=>`<label class="checkItem"><input type="checkbox" value="${item}">${item}</label>`).join("")}
-function saveMemo(){const checks=[...document.querySelectorAll("#memoChecks input:checked")].map(x=>x.value),seconds=Number(document.getElementById("timerMode").value),minutes=seconds===0?0:Math.round(seconds/60),log={id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()),date:new Date().toLocaleString("ja-JP"),timestamp:Date.now(),type:document.getElementById("practiceType").value,phrase:document.getElementById("phrase").value,bpm:Number(document.getElementById("bpm").value),minutes,result:document.getElementById("resultSelect").value,checks,memo:document.getElementById("freeMemo").value.trim()};appData.logs.unshift(log);if(log.type==="レッスン")appData.stats.lessonCount+=1;saveAppData();renderLevels();closeModal("memoModal");document.getElementById("freeMemo").value="";document.querySelectorAll("#memoChecks input").forEach(x=>x.checked=false);alert("記録したで！")}function addLesson(){appData.stats.lessonCount+=1;saveAppData();renderLevels();syncTeacherFields();alert("レッスンを1回追加したで")}function formatLogText(l,i){return `${i?"#"+i+"\n":""}${l.date}\n${l.type} / ${l.phrase}\nBPM ${l.bpm} / ${l.minutes||"-"}分\n出来：${l.result}\nチェック：${(l.checks||[]).join(", ")||"なし"}\nメモ：${l.memo||"なし"}`}function shareTodayLog(){const t=todayStr(),todayLogs=appData.logs.filter(l=>new Date(l.timestamp||Date.parse(l.date)).toLocaleDateString("ja-JP")===t);let text=`🥁 今日のドラム練習\n日付：${t}\n今日の練習時間：${appData.stats.todayMinutes}分\nドラムLv：${document.getElementById("drumLevel").textContent}\nレッスンLv：${document.getElementById("lessonLevel").textContent}\n自主練Lv：${document.getElementById("practiceLevel").textContent}\n\n`;if(todayLogs.length)todayLogs.forEach((l,i)=>text+=formatLogText(l,i+1)+"\n\n");else text+="メモ記録：なし\n";shareText(text,"ドラム練習記録")}function openMonthlyShare(){const cutoff=Date.now()-31*24*60*60*1000,logs=appData.logs.filter(l=>(l.timestamp||0)>=cutoff),wrap=document.getElementById("monthlyLogsContent");wrap.innerHTML=logs.length?logs.map((l,idx)=>`<div class="logItem logSelectRow"><input class="monthLogCheck" type="checkbox" value="${escapeHtml(l.id||idx)}"><div><b>${escapeHtml(l.date)}</b><br>${escapeHtml(l.type)} / ${escapeHtml(l.phrase)} / BPM ${escapeHtml(l.bpm)} / ${escapeHtml(l.minutes||"-")}分<br>出来：${escapeHtml(l.result)}<br>チェック：${escapeHtml((l.checks||[]).join(", ")||"なし")}<br>メモ：${escapeHtml(l.memo||"なし")}</div></div>`).join(""):"<p>直近1ヶ月のログがまだないで。</p>";document.getElementById("monthlyShareModal").style.display="flex"}function selectAllMonthlyLogs(flag){document.querySelectorAll("#monthlyLogsContent .monthLogCheck").forEach(ch=>ch.checked=flag)}function shareSelectedMonthlyLogs(){const ids=[...document.querySelectorAll("#monthlyLogsContent .monthLogCheck:checked")].map(x=>x.value);if(!ids.length){alert("共有する記録にチェックを入れてな");return}const logs=appData.logs.filter((l,idx)=>ids.includes(String(l.id||idx)));let text=`🥁 ドラム練習ログ共有\n選択件数：${logs.length}件\n\n`;logs.forEach((l,i)=>text+=formatLogText(l,i+1)+"\n\n");shareText(text,"ドラム練習ログ")}function shareText(text,title){if(navigator.share)navigator.share({title,text}).catch(()=>{});else if(navigator.clipboard){navigator.clipboard.writeText(text);alert("共有非対応なのでコピーしたで")}else alert(text)}function showLogs(){const wrap=document.getElementById("logsContent");wrap.innerHTML=appData.logs.length?appData.logs.slice(0,80).map(l=>`<div class="logItem"><b>${escapeHtml(l.date)}</b><br>${escapeHtml(l.type)} / ${escapeHtml(l.phrase)} / BPM ${escapeHtml(l.bpm)} / ${escapeHtml(l.minutes||"-")}分<br>出来：${escapeHtml(l.result)}<br>チェック：${escapeHtml((l.checks||[]).join(", ")||"なし")}<br>メモ：${escapeHtml(l.memo||"なし")}</div>`).join(""):"<p>まだログがないで。</p>";document.getElementById("logsModal").style.display="flex"}function showWeakness(){const bpmCount={},itemCount={};appData.logs.forEach(l=>{if(l.result==="もうちょっと"||l.result==="ぜんぜんできない"){bpmCount[l.bpm]=(bpmCount[l.bpm]||0)+1;(l.checks||[]).forEach(c=>itemCount[c]=(itemCount[c]||0)+1)}});const bpmHtml=Object.entries(bpmCount).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<li>BPM ${k}: ${v}回</li>`).join("")||"<li>まだデータなし</li>",itemHtml=Object.entries(itemCount).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<li>${k}: ${v}回</li>`).join("")||"<li>まだデータなし</li>";document.getElementById("weakContent").innerHTML=`<h3>苦手BPM</h3><ul>${bpmHtml}</ul><h3>苦手項目</h3><ul>${itemHtml}</ul>`;document.getElementById("weakModal").style.display="flex"}function escapeHtml(str){return String(str).replace(/[&<>"']/g,s=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[s]))}
-async function startRecording(){try{const stream=await navigator.mediaDevices.getUserMedia({audio:true});recordedChunks=[];mediaRecorder=new MediaRecorder(stream);mediaRecorder.ondataavailable=e=>{if(e.data.size>0)recordedChunks.push(e.data)};mediaRecorder.onstop=()=>{recordedBlob=new Blob(recordedChunks,{type:"audio/webm"});const url=URL.createObjectURL(recordedBlob),audio=document.getElementById("recordingPlayer");audio.src=url;audio.style.display="block";document.getElementById("recordingStatus").textContent="録音あり";stream.getTracks().forEach(t=>t.stop())};mediaRecorder.start();document.getElementById("recordingStatus").textContent="録音中..."}catch(e){alert("録音できへんかった。GitHub Pagesなどhttpsで開くと安定するで。")}}function stopRecording(){if(mediaRecorder&&mediaRecorder.state!=="inactive")mediaRecorder.stop()}async function shareRecording(){if(!recordedBlob){alert("録音がまだないで");return}const file=new File([recordedBlob],`drum_recording_${Date.now()}.webm`,{type:"audio/webm"});if(navigator.canShare&&navigator.canShare({files:[file]}))await navigator.share({files:[file],title:"ドラム録音"});else{const a=document.createElement("a");a.href=URL.createObjectURL(recordedBlob);a.download=file.name;a.click()}}function clearRecording(){recordedBlob=null;recordedChunks=[];document.getElementById("recordingPlayer").style.display="none";document.getElementById("recordingStatus").textContent="未録音"}
-function exportBackup(){const blob=new Blob([JSON.stringify(appData,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`drum_backup_${Date.now()}.json`;a.click();URL.revokeObjectURL(url)}function importBackup(event){const file=event.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{appData=mergeDeep(structuredClone(defaultData),JSON.parse(reader.result));saveAppData();init();alert("バックアップを読み込んだで")}catch(e){alert("読み込み失敗。JSONファイルを確認してな。")}};reader.readAsText(file)}function toggleTheme(){appData.settings.theme=appData.settings.theme==="light"?"dark":"light";saveAppData();document.body.classList.toggle("light",appData.settings.theme==="light")}function openTeacherLogin(){document.getElementById("teacherPassInput").value="";document.getElementById("teacherLoginModal").style.display="flex"}function checkTeacherPassword(){const input=document.getElementById("teacherPassInput").value;if(input===appData.settings.teacherPassword){closeModal("teacherLoginModal");syncTeacherFields();document.getElementById("teacherModal").style.display="flex"}else alert("パスワードが違うで")}function syncTeacherFields(){document.getElementById("teacherLessonCount").value=appData.stats.lessonCount;document.getElementById("teacherPracticeMinutes").value=appData.stats.practiceMinutes}function teacherSaveLevels(){appData.stats.lessonCount=Math.max(0,Number(document.getElementById("teacherLessonCount").value));appData.stats.practiceMinutes=Math.max(0,Number(document.getElementById("teacherPracticeMinutes").value));saveAppData();renderLevels();alert("レベルを調整したで")}function teacherSetMode(mode){setMode(mode);alert(`${mode}モードにしたで`)}function changeTeacherPassword(){const pw=document.getElementById("newTeacherPassword").value.trim();if(!pw){alert("新しいパスワードを入れてな");return}appData.settings.teacherPassword=pw;document.getElementById("newTeacherPassword").value="";saveAppData();alert("パスワードを変更したで")}function resetLogs(){if(!confirm("履歴だけ削除する？"))return;appData.logs=[];appData.checklist={};saveAppData();renderChecklist();alert("履歴を削除したで")}function resetAllData(){if(!confirm("全データ削除する？ほんまに？"))return;localStorage.removeItem(APP_KEY);appData=structuredClone(defaultData);init();alert("全データを削除したで")}window.addEventListener("beforeunload",saveSettings);init();
+
+
+const APP_KEY = "drumPracticeApp_v455";
+
+const defaultData = {
+  settings: {
+    mode: "初心者",
+    theme: "dark",
+    bpm: 80,
+    tone: "click",
+    timerMode: 60,
+    bars: 2,
+    beatsPerBar: 4,
+    division: 1,
+    swing: 0,
+    phrase: "シングルストローク RLRL",
+    scoreView: "lr",
+    lrReverse: false,
+    footMode: false,
+    teacherPassword: "1234",
+    clickEnabled: "on",
+    volume: 70,
+    accentEnabled: "off",
+    accentPattern: "none",
+    noteValue: "16",
+    highlightEnabled: "on"
+  },
+  stats: {
+    lessonCount: 0,
+    practiceMinutes: 0,
+    streak: 0,
+    lastPracticeDate: "",
+    todayMinutes: 0,
+    todayDate: ""
+  },
+  checklist: {},
+  logs: []
+};
+
+let appData = loadAppData();
+let audioCtx;
+let timerId = null;
+let countdownId = null;
+let scoreRenderTimer = null;
+let practiceStartedAt = null;
+let scoreStartedAt = null;
+let remainingSeconds = 0;
+let beatIndex = 0;
+let subIndex = 0;
+let currentStepIndex = -1;
+let tapTimes = [];
+let mediaRecorder = null;
+let recordedChunks = [];
+let recordedBlob = null;
+
+const baseSpeeds = [60,70,80,90,100,110,120,140,160];
+const memoItems = ["右手","左手","右足","左足","フレーズ","リズムキープ","アクセント"];
+
+const phraseDefs = {
+  "シングルストローク RLRL": {type:"rudiment", base:["R","L"], text:"シングルストローク", supportsNote:true, supportsAccent:true},
+  "ダブルストローク RRLL": {type:"rudiment", base:["R","R","L","L"], text:"ダブルストローク", supportsNote:true, supportsAccent:true},
+  "パラディドル RLRR LRLL": {type:"rudiment", base:["R","L","R","R","L","R","L","L"], text:"パラディドル", supportsNote:true, supportsAccent:true},
+  "8ビート": {
+    type:"fixed", text:"8ビート", supportsNote:false, supportsAccent:false,
+    lr:["HH","HH","SD","HH","HH","HH","SD","HH"],
+    counts:["1","&","2","&","3","&","4","&"],
+    simple:[{label:"HH",pattern:"xxxxxxxx"},{label:"SD",pattern:"--o---o-"},{label:"BD",pattern:"o---o---"}]
+  },
+  "16ビート": {
+    type:"fixed", text:"16ビート", supportsNote:false, supportsAccent:false,
+    lr:["HH","HH","HH","HH","SD","HH","HH","HH","HH","HH","HH","HH","SD","HH","HH","HH"],
+    counts:["1","e","&","a","2","e","&","a","3","e","&","a","4","e","&","a"],
+    simple:[{label:"HH",pattern:"xxxxxxxxxxxxxxxx"},{label:"SD",pattern:"----o-------o---"},{label:"BD",pattern:"o-------o-------"}]
+  },
+  "チェンジアップ 4分→8分→16分": {
+    type:"changeup", text:"チェンジアップ 4分→8分→16分", supportsNote:false, supportsAccent:false,
+    lr:[..."R---L---R---L---R-L-R-L-R-L-R-L-RLRLRLRLRLRLRLRL"],
+    counts:[..."1---2---3---4---1-&-2-&-3-&-4-&-1e&a2e&a3e&a4e&a"],
+    simple:[{label:"手",pattern:"R---L---R---L---"},{label:"手",pattern:"R-L-R-L-R-L-R-L-"},{label:"手",pattern:"RLRLRLRLRLRLRLRL"}]
+  },
+  "アクセント移動": {type:"rudiment", base:["R","L"], text:"アクセント移動", supportsNote:true, supportsAccent:true, forceAccent:true, forceNote:"8"},
+  "アクセント移動 16分": {type:"rudiment", base:["R","L"], text:"アクセント移動 16分", supportsNote:true, supportsAccent:true, forceAccent:true, forceNote:"16"},
+  "足だけ練習": {
+    type:"fixed", text:"足だけ練習", supportsNote:false, supportsAccent:false,
+    lr:["BD","-","HHf","-","BD","-","HHf","-"],
+    counts:["1","&","2","&","3","&","4","&"],
+    simple:[{label:"BD",pattern:"o---o---"},{label:"HHf",pattern:"--o---o-"}]
+  },
+  "簡単フィル：8ビート→フィル": {
+    type:"fixed", text:"1小節目：8ビート → 2小節目：フィル", supportsNote:false, supportsAccent:false,
+    lr:["HH","HH","SD","HH","HH","HH","SD","HH","HT","SD","SD","-","LT","-","FT","BD"],
+    counts:["1","&","2","&","3","&","4","&","1","e","&","a","2","e","&","a"],
+    simple:[
+      {title:"1小節目：8ビート"},
+      {label:"HH",pattern:"xxxxxxxx"},
+      {label:"SD",pattern:"--o---o-"},
+      {label:"BD",pattern:"o---o---"},
+      {spacer:true},
+      {title:"2小節目：フィル"},
+      {label:"HT",pattern:"----o---"},
+      {label:"SD",pattern:"o-o---o-"},
+      {label:"LT",pattern:"------o-"},
+      {label:"FT",pattern:"-------o"},
+      {label:"BD",pattern:"o-------"}
+    ]
+  },
+  "曲練習・全体練習": {type:"free", text:"曲名・練習内容をメモに書く", supportsNote:false, supportsAccent:false, lr:["自由","メモ","に","記入"], counts:["1","2","3","4"], simple:[{label:"MEMO",pattern:"曲練習"}]}
+};
+
+function loadAppData(){
+  try{
+    const raw = localStorage.getItem(APP_KEY);
+    if(!raw) return structuredClone(defaultData);
+    return mergeDeep(structuredClone(defaultData), JSON.parse(raw));
+  }catch(e){
+    return structuredClone(defaultData);
+  }
+}
+
+function mergeDeep(target, source){
+  for(const key in source){
+    if(source[key] && typeof source[key] === "object" && !Array.isArray(source[key])){
+      target[key] = mergeDeep(target[key] || {}, source[key]);
+    }else{
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+
+function saveAppData(){ localStorage.setItem(APP_KEY, JSON.stringify(appData)); }
+function todayStr(){ return new Date().toLocaleDateString("ja-JP"); }
+
+function syncToday(){
+  const t = todayStr();
+  if(appData.stats.todayDate !== t){
+    appData.stats.todayDate = t;
+    appData.stats.todayMinutes = 0;
+    saveAppData();
+  }
+}
+
+function setValue(id, value){
+  const el = document.getElementById(id);
+  if(el) el.value = value;
+}
+
+function setChecked(id, value){
+  const el = document.getElementById(id);
+  if(el) el.checked = !!value;
+}
+
+function init(){
+  syncToday();
+  const s = appData.settings;
+  if(Number(s.bars || 0) < 2) s.bars = 2;
+  ["bpm","tone","timerMode","bars","beatsPerBar","division","swing","phrase","scoreView","clickEnabled","volume","accentEnabled","accentPattern","noteValue","highlightEnabled"].forEach(id => setValue(id, s[id]));
+  setChecked("lrReverse", s.lrReverse);
+  setChecked("footMode", s.footMode);
+  updateVolumeText();
+  document.body.classList.toggle("light", s.theme === "light");
+  renderMemoChecks();
+  applyMode();
+  updateControlAvailability();
+  renderScore();
+  renderChecklist();
+  renderLevels();
+}
+
+function saveSettings(){
+  const s = appData.settings;
+  ["bpm","timerMode","bars","beatsPerBar","division","swing","volume"].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) s[id] = id === "bars" ? Math.max(2, Number(el.value || 2)) : Number(el.value);
+  });
+  ["tone","phrase","scoreView","clickEnabled","accentEnabled","accentPattern","noteValue","highlightEnabled"].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) s[id] = el.value;
+  });
+  const lr = document.getElementById("lrReverse");
+  const foot = document.getElementById("footMode");
+  if(lr) s.lrReverse = lr.checked;
+  if(foot) s.footMode = foot.checked;
+  saveAppData();
+}
+
+function updateVolumeText(){
+  const v = document.getElementById("volume");
+  const t = document.getElementById("volumeText");
+  if(v && t) t.textContent = v.value + "%";
+}
+
+function setMode(mode){
+  appData.settings.mode = mode;
+  saveAppData();
+  applyMode();
+}
+
+function applyMode(){
+  const mode = appData.settings.mode;
+  const badge = document.getElementById("currentModeBadge");
+  if(badge) badge.textContent = mode;
+  ["Beginner","Intermediate","Advanced"].forEach(name => {
+    const m = {Beginner:"初心者",Intermediate:"経験者",Advanced:"熟練"}[name];
+    const btn = document.getElementById("mode"+name);
+    if(btn) btn.classList.toggle("active", mode === m);
+  });
+  document.querySelectorAll(".advancedOnly").forEach(el => {
+    el.classList.toggle("hidden", mode !== "熟練");
+  });
+  saveSettings();
+}
+
+function renderLevels(){
+  syncToday();
+  const lessonLevel = appData.stats.lessonCount;
+  const practiceLevel = Math.floor(appData.stats.practiceMinutes / 60);
+  const exp = appData.stats.practiceMinutes % 60;
+  const drumLevel = lessonLevel + practiceLevel;
+  document.getElementById("lessonLevel").textContent = lessonLevel;
+  document.getElementById("practiceLevel").textContent = practiceLevel;
+  document.getElementById("drumLevel").textContent = drumLevel;
+  document.getElementById("expText").textContent = `${exp} / 60分`;
+  document.getElementById("expBar").style.width = `${Math.round(exp / 60 * 100)}%`;
+  document.getElementById("todayMinutesBadge").textContent = `今日 ${appData.stats.todayMinutes}分`;
+  document.getElementById("streakBadge").textContent = `連続 ${appData.stats.streak}日`;
+}
+
+function getRawPhrase(){
+  return phraseDefs[document.getElementById("phrase").value] || phraseDefs["シングルストローク RLRL"];
+}
+
+function buildRudimentData(raw){
+  if(raw.type !== "rudiment") return raw;
+  const note = raw.forceNote || document.getElementById("noteValue").value || "16";
+  const selectedBars = Number(document.getElementById("bars").value || 2);
+  // 通常は最低2小節。アクセント移動8分は2小節、アクセント移動16分は指定どおり1小節で表示。
+  const bars = raw.forceAccent ? (note === "16" ? 1 : 2) : Math.max(2, selectedBars);
+  const base = raw.base || ["R","L"];
+  const stepsPerBar = note === "4" ? 4 : note === "8" ? 8 : 16;
+  const total = stepsPerBar * bars;
+
+  const lr = [];
+  for(let i=0;i<total;i++) lr.push(base[i % base.length]);
+
+  const barCounts = note === "4"
+    ? ["1","2","3","4"]
+    : note === "8"
+      ? ["1","&","2","&","3","&","4","&"]
+      : ["1","e","&","a","2","e","&","a","3","e","&","a","4","e","&","a"];
+
+  const counts = [];
+  for(let b=0;b<bars;b++) counts.push(...barCounts);
+
+  const accents = Array(total).fill("");
+  if(raw.forceAccent || document.getElementById("accentPattern").value === "move"){
+    const barLen = stepsPerBar;
+
+    if(note === "16"){
+      // 16分のアクセント移動：1・6・11・16にアクセント
+      // | >---->---->----> |
+      // | RLRLRLRLRLRLRLRL |
+      [0, 5, 10, 15].forEach(pos => {
+        if(pos < total) accents[pos] = ">";
+      });
+    }else{
+      // 8分のアクセント移動：全体で1・6・11・16にアクセント
+      // | >---->-- | -->----> |
+      // | RLRLRLRL | RLRLRLRL |
+      const shiftPerBar = note === "8" ? 2 : 1;
+      const secondGap = note === "4" ? 2 : 5;
+      for(let b=0; b<bars; b++){
+        const start = b * barLen;
+        const first = (b * shiftPerBar) % barLen;
+        const second = (first + secondGap) % barLen;
+        accents[start + first] = ">";
+        accents[start + second] = ">";
+      }
+    }
+  }
+
+  return {
+    type: "built",
+    text: raw.text + (raw.forceAccent ? "" : ` ${note}分`),
+    supportsNote: true,
+    supportsAccent: true,
+    lr, counts, accents,
+    stepsPerBar,
+    simple: [{label:"手", pattern:lr.join("")}]
+  };
+}
+
+function getCurrentPhraseData(){
+  return buildRudimentData(getRawPhrase());
+}
+
+function updateControlAvailability(){
+  const raw = getRawPhrase();
+  const note = document.getElementById("noteValue");
+  const bars = document.getElementById("bars");
+  const accentEnabled = document.getElementById("accentEnabled");
+  const accentPattern = document.getElementById("accentPattern");
+
+  if(note){
+    note.disabled = !raw.supportsNote;
+    if(raw.forceNote) note.value = raw.forceNote;
+  }
+
+  if(bars){
+    bars.disabled = raw.type === "changeup";
+  }
+
+  if(accentEnabled && accentPattern){
+    const supportAccent = !!raw.supportsAccent;
+    accentEnabled.disabled = !supportAccent;
+    if(!supportAccent){
+      accentEnabled.value = "off";
+      accentPattern.value = "none";
+      accentPattern.disabled = true;
+    }else{
+      if(raw.forceAccent){
+        accentEnabled.value = "on";
+        accentPattern.value = "move";
+      }
+      accentPattern.disabled = accentEnabled.value === "off";
+    }
+  }
+}
+
+function onPhraseChanged(){
+  const phrase = document.getElementById("phrase").value;
+  if(phrase === "簡単フィル：8ビート→フィル") document.getElementById("scoreView").value = "simple";
+  updateControlAvailability();
+  renderScore();
+  renderChecklist();
+  saveSettings();
+}
+
+function buildAccentArray(len, baseAccents){
+  const enabled = document.getElementById("accentEnabled").value === "on";
+  const pattern = document.getElementById("accentPattern").value;
+  if(!enabled || pattern === "none") return Array(len).fill("");
+
+  if(pattern === "move"){
+    if(baseAccents && baseAccents.some(x => x === ">")) return baseAccents;
+    const out = Array(len).fill("");
+    for(let i=0;i<len;i+=8){
+      if(i < len) out[i] = ">";
+      if(i+5 < len) out[i+5] = ">";
+    }
+    return out;
+  }
+
+  const posMap = {first:0, second:1, third:2, fourth:3};
+  const pos = posMap[pattern] ?? 0;
+  const out = Array(len).fill("");
+  for(let i=pos;i<len;i+=4) out[i] = ">";
+  return out;
+}
+
+function applyAccentPatternToSimpleRows(rows, data){
+  const enabled = document.getElementById("accentEnabled").value === "on";
+  const pattern = document.getElementById("accentPattern").value;
+  const cloned = rows.map(r => ({...r})).filter(r => r.label !== "ACC");
+  if(!enabled || pattern === "none" || !data.supportsAccent) return cloned;
+
+  const playable = cloned.find(r => r.pattern && !r.title && !r.spacer);
+  const len = playable ? playable.pattern.length : Math.max(data.lr.length, 8);
+  const acc = buildAccentArray(len, data.accents).map(x => x || "-").join("");
+  return [{label:"ACC", pattern:acc}, ...cloned];
+}
+
+function reverseLRText(text){
+  return String(text)
+    .replaceAll("R","_R_")
+    .replaceAll("L","R")
+    .replaceAll("_R_","L")
+    .replaceAll("右","TEMP_RIGHT")
+    .replaceAll("左","右")
+    .replaceAll("TEMP_RIGHT","左");
+}
+
+function renderScore(){
+  const data = getCurrentPhraseData();
+  if(document.getElementById("scoreView").value === "simple") renderSimpleScore(data);
+  else renderLRScore(data);
+}
+
+function isHighlightOn(){
+  return document.getElementById("highlightEnabled").value === "on";
+}
+
+function renderCellsWithMeasureBars(values, counts, activeClass){
+  const len = Math.max(values.length, counts.length);
+  let html = "";
+  for(let i=0; i<len; i++){
+    if(i === 0 || (i > 0 && counts[i] === "1")){
+      html += `<span class="measureBar">|</span>`;
+    }
+    html += `<span class="scoreCell ${activeClass(i)}">${escapeHtml(values[i] || " ")}</span>`;
+  }
+  html += `<span class="measureBar">|</span>`;
+  return html;
+}
+
+function renderLRScore(data){
+  let lr = [...(data.lr || [])];
+  const counts = [...(data.counts || [])];
+  const accents = buildAccentArray(Math.max(lr.length, counts.length), data.accents || []);
+
+  if(document.getElementById("lrReverse").checked) lr = lr.map(reverseLRText);
+  if(document.getElementById("footMode").checked) lr = lr.map(x => x==="R" || x==="L" ? "BD" : x);
+
+  const step = currentStepIndex;
+  const active = i => isHighlightOn() && i === step ? "active" : "";
+  const accentHtml = accents.some(x => x === ">")
+    ? `<div class="scoreLine accentLine"><span class="scoreLabel">ACC</span>${renderCellsWithMeasureBars(accents, counts, active)}</div>`
+    : "";
+
+  document.getElementById("score").innerHTML =
+    `<div>${escapeHtml(data.text)}</div><br>` +
+    accentHtml +
+    `<div class="scoreLine"><span class="scoreLabel">PLAY</span>${renderCellsWithMeasureBars(lr, counts, active)}</div>` +
+    `<div class="scoreLine"><span class="scoreLabel">COUNT</span>${renderCellsWithMeasureBars(counts, counts, active)}</div>`;
+}
+
+function renderSimpleScore(data){
+  const rows = applyAccentPatternToSimpleRows(data.simple || [], data);
+  const step = currentStepIndex;
+  let html = "";
+
+  rows.forEach(row => {
+    if(row.spacer){ html += "<br>"; return; }
+    if(row.title){ html += `<div style="margin-top:4px;margin-bottom:4px">${escapeHtml(row.title)}</div>`; return; }
+
+    html += `<div class="simpleScoreLine"><span class="simpleLabel">${escapeHtml(row.label)}</span><span>|</span><span class="simpleBar">`;
+    [...String(row.pattern)].forEach((ch, i) => {
+      const active = isHighlightOn() && isSimpleCellActive(data, row, i, step);
+      html += `<span class="simpleCell ${active ? "active" : ""}">${escapeHtml(ch)}</span>`;
+    });
+    html += `</span><span>|</span></div>`;
+  });
+
+  document.getElementById("score").innerHTML = html;
+}
+
+function isSimpleCellActive(data, row, i, step){
+  if(step < 0) return false;
+  if(data.text && data.text.includes("フィル")){
+    if(step < 8) return ["HH","SD","BD"].includes(row.label) && i === step;
+    return ["HT","SD","LT","FT","BD"].includes(row.label) && i === step - 8;
+  }
+  return i === step;
+}
+
+function getChecklistKey(){ return `${todayStr()}__${document.getElementById("phrase").value}`; }
+
+function renderChecklist(){
+  const key = getChecklistKey();
+  if(!appData.checklist[key]) appData.checklist[key] = {};
+  const data = appData.checklist[key];
+  let html = "<tr><th>BPM</th><th>完了</th><th>苦手</th></tr>";
+  baseSpeeds.forEach(bpm => {
+    const done = data[bpm]?.done;
+    const weak = data[bpm]?.weak;
+    html += `<tr class="${done ? "checked" : ""} ${weak ? "weak" : ""}">
+      <td>${bpm}</td>
+      <td><input type="checkbox" ${done ? "checked" : ""} onchange="toggleBpm(${bpm}, 'done', this.checked)"></td>
+      <td><input type="checkbox" ${weak ? "checked" : ""} onchange="toggleBpm(${bpm}, 'weak', this.checked)"></td>
+    </tr>`;
+  });
+  document.getElementById("checklist").innerHTML = html;
+  saveAppData();
+}
+
+function toggleBpm(bpm, type, val){
+  const key = getChecklistKey();
+  if(!appData.checklist[key]) appData.checklist[key] = {};
+  if(!appData.checklist[key][bpm]) appData.checklist[key][bpm] = {done:false, weak:false};
+  appData.checklist[key][bpm][type] = val;
+  saveAppData();
+  renderChecklist();
+}
+
+function markCurrentBpmDone(){
+  const bpm = Number(document.getElementById("bpm").value);
+  const nearest = baseSpeeds.reduce((a,b)=>Math.abs(b-bpm)<Math.abs(a-bpm)?b:a, baseSpeeds[0]);
+  toggleBpm(nearest, "done", true);
+}
+
+function changeBpm(n){
+  const el = document.getElementById("bpm");
+  el.value = Math.max(20, Math.min(320, Number(el.value) + n));
+  saveSettings();
+}
+
+function ensureAudio(){
+  if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}
+
+function playSound(accent=false, sub=false){
+  if(document.getElementById("clickEnabled").value === "off") return;
+  ensureAudio();
+
+  const tone = document.getElementById("tone").value;
+  const volume = Number(document.getElementById("volume").value) / 100;
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+
+  let freq = 900;
+  if(tone === "click") freq = accent ? 1300 : sub ? 650 : 900;
+  if(tone === "wood") freq = accent ? 760 : sub ? 420 : 560;
+  if(tone === "kick") freq = accent ? 130 : sub ? 70 : 95;
+  if(tone === "hat") freq = accent ? 5200 : sub ? 3000 : 4200;
+
+  osc.frequency.value = freq;
+  osc.type = tone === "hat" ? "square" : "sine";
+  gain.gain.setValueAtTime((sub ? 0.18 : 0.42) * volume, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.07);
+
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.08);
+}
+
+function startPractice(){
+  stopPractice(false);
+  saveSettings();
+  ensureAudio();
+  practiceStartedAt = Date.now();
+  scoreStartedAt = Date.now();
+  remainingSeconds = Number(document.getElementById("timerMode").value);
+  beatIndex = 0;
+  subIndex = 0;
+  currentStepIndex = -1;
+  startScoreRenderLoop();
+  runMetro();
+
+  if(remainingSeconds > 0){
+    countdownId = setInterval(() => {
+      remainingSeconds--;
+      document.getElementById("subBeat").textContent = `残り ${formatTime(remainingSeconds)}`;
+      if(remainingSeconds <= 0){
+        stopPractice(true);
+        openMemoModal();
+      }
+    }, 1000);
+  }
+}
+
+function startScoreRenderLoop(){
+  stopScoreRenderLoop();
+  scoreRenderTimer = setInterval(() => {
+    if(scoreStartedAt){
+      updateScoreHighlight();
+      renderScore();
+    }
+  }, 40);
+}
+
+function stopScoreRenderLoop(){
+  if(scoreRenderTimer){
+    clearInterval(scoreRenderTimer);
+    scoreRenderTimer = null;
+  }
+}
+
+function getScoreStepCount(data){
+  return Math.max((data.lr || []).length, (data.counts || []).length, 1);
+}
+
+function getScoreBeats(data){
+  const phrase = document.getElementById("phrase").value;
+  if(phrase === "簡単フィル：8ビート→フィル") return 8;
+  if(phrase === "チェンジアップ 4分→8分→16分") return 12;
+  if(data && data.type === "built"){
+    const len = getScoreStepCount(data);
+    const note = document.getElementById("noteValue").value;
+    const stepsPerBeat = note === "4" ? 1 : note === "8" ? 2 : 4;
+    return len / stepsPerBeat;
+  }
+  return 4;
+}
+
+function updateScoreHighlight(){
+  const data = getCurrentPhraseData();
+  const len = getScoreStepCount(data);
+  if(!scoreStartedAt){ currentStepIndex = -1; return; }
+  const bpm = Number(document.getElementById("bpm").value);
+  const elapsed = Date.now() - scoreStartedAt;
+  const beatMs = 60000 / bpm;
+  const cycleMs = beatMs * getScoreBeats(data);
+  const stepMs = cycleMs / len;
+  currentStepIndex = Math.floor(elapsed / stepMs) % len;
+}
+
+function runMetro(){
+  const bpm = Number(document.getElementById("bpm").value);
+  const mode = appData.settings.mode;
+  const division = mode === "熟練" ? Number(document.getElementById("division").value) : 1;
+  const beatsPerBar = mode === "熟練" ? Number(document.getElementById("beatsPerBar").value) : 4;
+  const bars = mode === "熟練" ? Number(document.getElementById("bars").value) : 1;
+  const swing = mode === "熟練" ? Number(document.getElementById("swing").value) : 0;
+
+  const totalBeats = beatsPerBar * bars;
+  const currentBeat = (beatIndex % totalBeats) + 1;
+  const currentBar = Math.floor((beatIndex % totalBeats) / beatsPerBar) + 1;
+  const isAccent = currentBeat === 1 || ((currentBeat - 1) % beatsPerBar === 0);
+  const isSub = subIndex !== 0;
+
+  document.getElementById("beat").textContent = `${currentBeat}`;
+  document.getElementById("subBeat").textContent = `小節${currentBar} / 分割 ${subIndex + 1}/${division}`;
+  playSound(isAccent && !isSub, isSub);
+
+  let interval = 60000 / bpm / division;
+  if(swing > 0 && division === 2){
+    const beatMs = 60000 / bpm;
+    interval = subIndex === 0 ? beatMs * swing : beatMs * (1 - swing);
+  }
+
+  subIndex++;
+  if(subIndex >= division){
+    subIndex = 0;
+    beatIndex++;
+  }
+  timerId = setTimeout(runMetro, interval);
+}
+
+function stopPractice(shouldRecord){
+  clearTimeout(timerId);
+  clearInterval(countdownId);
+  timerId = null;
+  countdownId = null;
+  stopScoreRenderLoop();
+  currentStepIndex = -1;
+  scoreStartedAt = null;
+  document.getElementById("beat").textContent = "-";
+  document.getElementById("subBeat").textContent = "停止中";
+  renderScore();
+
+  if(shouldRecord && practiceStartedAt){
+    const minutes = Math.max(1, Math.round((Date.now() - practiceStartedAt) / 60000));
+    addPracticeMinutes(minutes);
+    practiceStartedAt = null;
+  }
+}
+
+function addPracticeMinutes(min){
+  syncToday();
+  appData.stats.practiceMinutes += min;
+  appData.stats.todayMinutes += min;
+  updateStreak();
+  saveAppData();
+  renderLevels();
+}
+
+function updateStreak(){
+  const t = todayStr();
+  if(appData.stats.lastPracticeDate === t) return;
+  const y = new Date();
+  y.setDate(y.getDate() - 1);
+  const ys = y.toLocaleDateString("ja-JP");
+  appData.stats.streak = appData.stats.lastPracticeDate === ys ? appData.stats.streak + 1 : 1;
+  appData.stats.lastPracticeDate = t;
+}
+
+function formatTime(sec){ return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,"0")}`; }
+
+function tapTempo(){
+  const now = Date.now();
+  tapTimes.push(now);
+  tapTimes = tapTimes.slice(-6);
+  if(tapTimes.length >= 2){
+    const intervals = [];
+    for(let i=1;i<tapTimes.length;i++) intervals.push(tapTimes[i] - tapTimes[i-1]);
+    const avg = intervals.reduce((a,b)=>a+b,0) / intervals.length;
+    const bpm = Math.round(60000 / avg);
+    document.getElementById("bpm").value = Math.max(20, Math.min(320, bpm));
+    document.getElementById("tapInfo").textContent = `推定BPM ${bpm}`;
+    saveSettings();
+  }
+}
+
+function resetTapTempo(){
+  tapTimes = [];
+  document.getElementById("tapInfo").textContent = "タップでBPM計測";
+}
+
+function randomTask(){
+  const list = Object.keys(phraseDefs);
+  const phrase = list[Math.floor(Math.random() * list.length)];
+  const bpm = baseSpeeds[Math.floor(Math.random() * baseSpeeds.length)];
+  document.getElementById("phrase").value = phrase;
+  document.getElementById("bpm").value = bpm;
+  onPhraseChanged();
+  alert(`ランダム課題
+${phrase}
+BPM ${bpm}`);
+}
+
+function openMemoModal(){ document.getElementById("memoModal").style.display = "flex"; }
+function closeModal(id){ document.getElementById(id).style.display = "none"; }
+
+function renderMemoChecks(){
+  document.getElementById("memoChecks").innerHTML = memoItems.map(item =>
+    `<label class="checkItem"><input type="checkbox" value="${item}">${item}</label>`
+  ).join("");
+}
+
+function saveMemo(){
+  const checks = [...document.querySelectorAll("#memoChecks input:checked")].map(x => x.value);
+  const seconds = Number(document.getElementById("timerMode").value);
+  const minutes = seconds === 0 ? 0 : Math.round(seconds / 60);
+  const log = {
+    id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random(),
+    date: new Date().toLocaleString("ja-JP"),
+    timestamp: Date.now(),
+    type: document.getElementById("practiceType").value,
+    phrase: document.getElementById("phrase").value,
+    bpm: Number(document.getElementById("bpm").value),
+    minutes,
+    result: document.getElementById("resultSelect").value,
+    checks,
+    memo: document.getElementById("freeMemo").value.trim()
+  };
+  appData.logs.unshift(log);
+  if(log.type === "レッスン") appData.stats.lessonCount += 1;
+  saveAppData();
+  renderLevels();
+  closeModal("memoModal");
+  document.getElementById("freeMemo").value = "";
+  document.querySelectorAll("#memoChecks input").forEach(x => x.checked = false);
+  alert("記録したで！");
+}
+
+
+function formatLogText(l, i){
+  const header = i ? `#${i}\n` : "";
+  return `${header}${l.date}
+${l.type} / ${l.phrase}
+BPM ${l.bpm} / ${l.minutes || "-"}分
+出来：${l.result}
+チェック：${(l.checks || []).join(", ") || "なし"}
+メモ：${l.memo || "なし"}`;
+}
+
+function shareTodayLog(){
+  const t = todayStr();
+  const todayLogs = appData.logs.filter(l => new Date(l.timestamp || Date.parse(l.date)).toLocaleDateString("ja-JP") === t);
+  let text = `🥁 今日のドラム練習
+日付：${t}
+今日の練習時間：${appData.stats.todayMinutes}分
+ドラムLv：${document.getElementById("drumLevel").textContent}
+レッスンLv：${document.getElementById("lessonLevel").textContent}
+自主練Lv：${document.getElementById("practiceLevel").textContent}
+
+`;
+  if(todayLogs.length) todayLogs.forEach((l,i) => text += formatLogText(l, i+1) + "\n\n");
+  else text += "メモ記録：なし\n";
+  shareText(text, "ドラム練習記録");
+}
+
+function openMonthlyShare(){
+  const cutoff = Date.now() - 31 * 24 * 60 * 60 * 1000;
+  const logs = appData.logs.filter(l => (l.timestamp || 0) >= cutoff);
+  const wrap = document.getElementById("monthlyLogsContent");
+  if(!logs.length){
+    wrap.innerHTML = "<p>直近1ヶ月のログがまだないで。</p>";
+  }else{
+    wrap.innerHTML = logs.map((l,idx) => `
+      <div class="logItem logSelectRow">
+        <input class="monthLogCheck" type="checkbox" value="${escapeHtml(l.id || idx)}">
+        <div><b>${escapeHtml(l.date)}</b><br>
+        ${escapeHtml(l.type)} / ${escapeHtml(l.phrase)} / BPM ${escapeHtml(l.bpm)} / ${escapeHtml(l.minutes || "-")}分<br>
+        出来：${escapeHtml(l.result)}<br>
+        チェック：${escapeHtml((l.checks||[]).join(", ") || "なし")}<br>
+        メモ：${escapeHtml(l.memo || "なし")}</div>
+      </div>`).join("");
+  }
+  document.getElementById("monthlyShareModal").style.display = "flex";
+}
+
+function selectAllMonthlyLogs(flag){
+  document.querySelectorAll("#monthlyLogsContent .monthLogCheck").forEach(ch => ch.checked = flag);
+}
+
+function shareSelectedMonthlyLogs(){
+  const selectedIds = [...document.querySelectorAll("#monthlyLogsContent .monthLogCheck:checked")].map(x => x.value);
+  if(!selectedIds.length){ alert("共有する記録にチェックを入れてな"); return; }
+  const logs = appData.logs.filter((l,idx) => selectedIds.includes(String(l.id || idx)));
+  let text = `🥁 ドラム練習ログ共有
+選択件数：${logs.length}件
+
+`;
+  logs.forEach((l,i) => text += formatLogText(l, i+1) + "\n\n");
+  shareText(text, "ドラム練習ログ");
+}
+
+function shareText(text, title){
+  if(navigator.share) navigator.share({title, text}).catch(()=>{});
+  else if(navigator.clipboard){ navigator.clipboard.writeText(text); alert("共有非対応なのでコピーしたで"); }
+  else alert(text);
+}
+
+function showLogs(){
+  const wrap = document.getElementById("logsContent");
+  if(!appData.logs.length) wrap.innerHTML = "<p>まだログがないで。</p>";
+  else wrap.innerHTML = appData.logs.slice(0,80).map(l => `
+    <div class="logItem"><b>${escapeHtml(l.date)}</b><br>
+    ${escapeHtml(l.type)} / ${escapeHtml(l.phrase)} / BPM ${escapeHtml(l.bpm)} / ${escapeHtml(l.minutes || "-")}分<br>
+    出来：${escapeHtml(l.result)}<br>
+    チェック：${escapeHtml((l.checks||[]).join(", ") || "なし")}<br>
+    メモ：${escapeHtml(l.memo || "なし")}</div>`).join("");
+  document.getElementById("logsModal").style.display = "flex";
+}
+
+function showWeakness(){
+  const bpmCount = {};
+  const itemCount = {};
+  appData.logs.forEach(l => {
+    if(l.result === "もうちょっと" || l.result === "ぜんぜんできない"){
+      bpmCount[l.bpm] = (bpmCount[l.bpm] || 0) + 1;
+      (l.checks || []).forEach(c => itemCount[c] = (itemCount[c] || 0) + 1);
+    }
+  });
+  const bpmHtml = Object.entries(bpmCount).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<li>BPM ${k}: ${v}回</li>`).join("") || "<li>まだデータなし</li>";
+  const itemHtml = Object.entries(itemCount).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<li>${k}: ${v}回</li>`).join("") || "<li>まだデータなし</li>";
+  document.getElementById("weakContent").innerHTML = `<h3>苦手BPM</h3><ul>${bpmHtml}</ul><h3>苦手項目</h3><ul>${itemHtml}</ul>`;
+  document.getElementById("weakModal").style.display = "flex";
+}
+
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g, s => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" }[s]));
+}
+
+async function startRecording(){
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({audio:true});
+    recordedChunks = [];
+    mediaRecorder = new MediaRecorder(stream);
+    mediaRecorder.ondataavailable = e => { if(e.data.size > 0) recordedChunks.push(e.data); };
+    mediaRecorder.onstop = () => {
+      recordedBlob = new Blob(recordedChunks, {type:"audio/webm"});
+      const url = URL.createObjectURL(recordedBlob);
+      const audio = document.getElementById("recordingPlayer");
+      audio.src = url;
+      audio.style.display = "block";
+      document.getElementById("recordingStatus").textContent = "録音あり";
+      stream.getTracks().forEach(t => t.stop());
+    };
+    mediaRecorder.start();
+    document.getElementById("recordingStatus").textContent = "録音中...";
+  }catch(e){
+    alert("録音できへんかった。GitHub Pagesなどhttpsで開くと安定するで。");
+  }
+}
+
+function stopRecording(){
+  if(mediaRecorder && mediaRecorder.state !== "inactive") mediaRecorder.stop();
+}
+
+async function shareRecording(){
+  if(!recordedBlob){ alert("録音がまだないで"); return; }
+  const file = new File([recordedBlob], `drum_recording_${Date.now()}.webm`, {type:"audio/webm"});
+  if(navigator.canShare && navigator.canShare({files:[file]})) await navigator.share({files:[file], title:"ドラム録音"});
+  else{
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(recordedBlob);
+    a.download = file.name;
+    a.click();
+  }
+}
+
+function clearRecording(){
+  recordedBlob = null;
+  recordedChunks = [];
+  document.getElementById("recordingPlayer").style.display = "none";
+  document.getElementById("recordingStatus").textContent = "未録音";
+}
+
+function exportBackup(){
+  const blob = new Blob([JSON.stringify(appData, null, 2)], {type:"application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `drum_backup_${Date.now()}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importBackup(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try{
+      appData = mergeDeep(structuredClone(defaultData), JSON.parse(reader.result));
+      saveAppData();
+      init();
+      alert("バックアップを読み込んだで");
+    }catch(e){
+      alert("読み込み失敗。JSONファイルを確認してな。");
+    }
+  };
+  reader.readAsText(file);
+}
+
+function toggleTheme(){
+  appData.settings.theme = appData.settings.theme === "light" ? "dark" : "light";
+  saveAppData();
+  document.body.classList.toggle("light", appData.settings.theme === "light");
+}
+
+function openTeacherLogin(){
+  document.getElementById("teacherPassInput").value = "";
+  document.getElementById("teacherLoginModal").style.display = "flex";
+}
+
+function checkTeacherPassword(){
+  const input = document.getElementById("teacherPassInput").value;
+  if(input === appData.settings.teacherPassword){
+    closeModal("teacherLoginModal");
+    syncTeacherFields();
+    document.getElementById("teacherModal").style.display = "flex";
+  }else alert("パスワードが違うで");
+}
+
+function syncTeacherFields(){
+  document.getElementById("teacherLessonCount").value = appData.stats.lessonCount;
+  document.getElementById("teacherPracticeMinutes").value = appData.stats.practiceMinutes;
+}
+
+function teacherSaveLevels(){
+  appData.stats.lessonCount = Math.max(0, Number(document.getElementById("teacherLessonCount").value));
+  appData.stats.practiceMinutes = Math.max(0, Number(document.getElementById("teacherPracticeMinutes").value));
+  saveAppData();
+  renderLevels();
+  alert("レベルを調整したで");
+}
+
+function addLesson(){
+  appData.stats.lessonCount += 1;
+  saveAppData();
+  renderLevels();
+  syncTeacherFields();
+  alert("レッスンを1回追加したで");
+}
+
+function teacherSetMode(mode){
+  setMode(mode);
+  alert(`${mode}モードにしたで`);
+}
+
+function changeTeacherPassword(){
+  const pw = document.getElementById("newTeacherPassword").value.trim();
+  if(!pw){ alert("新しいパスワードを入れてな"); return; }
+  appData.settings.teacherPassword = pw;
+  document.getElementById("newTeacherPassword").value = "";
+  saveAppData();
+  alert("パスワードを変更したで");
+}
+
+function resetLogs(){
+  if(!confirm("履歴だけ削除する？")) return;
+  appData.logs = [];
+  appData.checklist = {};
+  saveAppData();
+  renderChecklist();
+  alert("履歴を削除したで");
+}
+
+function resetAllData(){
+  if(!confirm("全データ削除する？ほんまに？")) return;
+  localStorage.removeItem(APP_KEY);
+  appData = structuredClone(defaultData);
+  init();
+  alert("全データを削除したで");
+}
+
+window.addEventListener("beforeunload", saveSettings);
+init();
+
+
 </script></body></html>
